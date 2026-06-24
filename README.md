@@ -1,6 +1,6 @@
 ### Internship Management
 
-KRCS Internship Management System
+Internship Information Management System
 
 ### Installation
 

@@ -1,7 +1,7 @@
 app_name = "internship_management"
 app_title = "Internship Management"
-app_publisher = "sumeya bishar"
-app_description = "KRCS Internship Management System"
+app_publisher = " KRCS"
+app_description = "Internship Information Management System"
 app_email = "sumeyabishar70@gmail.com"
 app_license = "mit"
 
