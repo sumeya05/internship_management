@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "ONB-.YYYY.-.####",
+ "creation": "2026-06-25 10:17:48.677401",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "intern_information_section",
+  "intern",
+  "section_break_mqva",
+  "consent_form_signed",
+  "acknowledgement_form_signed",
+  "column_break_dqex",
+  "code_of_conduct_signed",
+  "psea_awareness_completed",
+  "section_break_inqf",
+  "documents_uploaded",
+  "section_break_jnhy",
+  "completion_date",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "intern",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Intern",
+   "options": "Intern Profile",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "intern_information_section",
+   "fieldtype": "Section Break",
+   "label": "Intern Information"
+  },
+  {
+   "fieldname": "section_break_mqva",
+   "fieldtype": "Section Break",
+   "label": "Onboarding Checklist"
+  },
+  {
+   "default": "0",
+   "fieldname": "consent_form_signed",
+   "fieldtype": "Check",
+   "label": "Consent Form Signed"
+  },
+  {
+   "default": "0",
+   "fieldname": "acknowledgement_form_signed",
+   "fieldtype": "Check",
+   "label": "Acknowledgement Form Signed"
+  },
+  {
+   "default": "0",
+   "fieldname": "code_of_conduct_signed",
+   "fieldtype": "Check",
+   "label": "Code Of Conduct Signed"
+  },
+  {
+   "fieldname": "column_break_dqex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "psea_awareness_completed",
+   "fieldtype": "Check",
+   "label": "PSEA Awareness Completed"
+  },
+  {
+   "fieldname": "section_break_inqf",
+   "fieldtype": "Section Break",
+   "label": "Supporting Documents"
+  },
+  {
+   "fieldname": "documents_uploaded",
+   "fieldtype": "Attach",
+   "label": "Documents Uploaded"
+  },
+  {
+   "fieldname": "section_break_jnhy",
+   "fieldtype": "Section Break",
+   "label": "Completion Information"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completion Date",
+   "read_only": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nCompleted",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-25 10:40:39.462833",
+ "modified_by": "Administrator",
+ "module": "Internship Management",
+ "name": "Intern Onboarding",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

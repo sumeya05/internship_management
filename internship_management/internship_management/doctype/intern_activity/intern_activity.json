@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "ACT-.YYYY.-.####",
+ "creation": "2026-06-25 10:47:12.970786",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "activity_information_section",
+  "intern",
+  "date",
+  "task_assigned",
+  "column_break_mdkl",
+  "task_description",
+  "assigned_by",
+  "section_break_ovxz",
+  "completion_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "intern",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Intern",
+   "options": "Intern Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "activity_information_section",
+   "fieldtype": "Section Break",
+   "label": "Activity Information"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "task_assigned",
+   "fieldtype": "Data",
+   "label": "Task Assigned",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mdkl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "task_description",
+   "fieldtype": "Small Text",
+   "label": "Task Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assigned_by",
+   "fieldtype": "Link",
+   "label": "Assigned By",
+   "options": "Supervisor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_ovxz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "completion_status",
+   "fieldtype": "Percent",
+   "label": "Completion Status"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-25 10:52:14.734110",
+ "modified_by": "Administrator",
+ "module": "Internship Management",
+ "name": "Intern Activity",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

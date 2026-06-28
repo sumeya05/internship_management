@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-06-24 16:48:38.737948",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "criteria",
+  "maximum_scores",
+  "score_awarded",
+  "comments"
+ ],
+ "fields": [
+  {
+   "fieldname": "criteria",
+   "fieldtype": "Data",
+   "label": "Criteria"
+  },
+  {
+   "fieldname": "maximum_scores",
+   "fieldtype": "Int",
+   "label": "Maximum Scores"
+  },
+  {
+   "fieldname": "score_awarded",
+   "fieldtype": "Int",
+   "label": "Score Awarded"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-24 16:49:42.820792",
+ "modified_by": "Administrator",
+ "module": "Internship Management",
+ "name": "Interview Evaluation",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

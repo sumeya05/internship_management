@@ -1,0 +1,194 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "VAC-.YYYY.-.####",
+ "creation": "2026-06-24 15:32:05.564175",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vacancy_title",
+  "department",
+  "required_skills",
+  "column_break_vxba",
+  "location",
+  "number_of_vacancies",
+  "required_qualifications",
+  "section_break_oncf",
+  "duration_months",
+  "requested_by",
+  "request_date",
+  "hr_comments",
+  "status",
+  "column_break_jyhm",
+  "responsibilities",
+  "reporting_supervisor",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "vacancy_title",
+   "fieldtype": "Data",
+   "label": "Vacancy Title"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Internship Vacancy",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "column_break_vxba",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "number_of_vacancies",
+   "fieldtype": "Int",
+   "label": "Number of Vacancies"
+  },
+  {
+   "fieldname": "required_qualifications",
+   "fieldtype": "Small Text",
+   "label": "Required Qualifications"
+  },
+  {
+   "fieldname": "section_break_oncf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "required_skills",
+   "fieldtype": "Small Text",
+   "label": "Required Skills"
+  },
+  {
+   "fieldname": "column_break_jyhm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "responsibilities",
+   "fieldtype": "Text Editor",
+   "label": "Responsibilities"
+  },
+  {
+   "fieldname": "duration_months",
+   "fieldtype": "Int",
+   "label": "Duration Months"
+  },
+  {
+   "fieldname": "reporting_supervisor",
+   "fieldtype": "Link",
+   "label": "Reporting Supervisor",
+   "options": "Supervisor"
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "label": "Requested By",
+   "options": "User"
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date"
+  },
+  {
+   "fieldname": "hr_comments",
+   "fieldtype": "Small Text",
+   "label": "HR Comments",
+   "options": "Draft\nPending HR Approval\nApproved\nRejected\n"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPending HR Approval\nApproved\nRejected"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-06-26 09:17:16.850327",
+ "modified_by": "Administrator",
+ "module": "Internship Management",
+ "name": "Internship Vacancy",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Department Officer",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Officer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Supervisor",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

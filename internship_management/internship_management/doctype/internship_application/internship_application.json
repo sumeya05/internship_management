@@ -1,0 +1,263 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "APP-.YYYY.-.####",
+ "creation": "2026-06-24 16:02:38.553674",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "personal_information_section_section",
+  "first_name",
+  "last_name",
+  "date_of_birth",
+  "email",
+  "column_break_elek",
+  "middle_name",
+  "gender",
+  "national_id",
+  "phone",
+  "section_break_hqvm",
+  "institution",
+  "year_of_study",
+  "column_break_bilc",
+  "course",
+  "section_break_arsy",
+  "preferred_department",
+  "internship_start_date",
+  "internship_end_date",
+  "section_break_kcgy",
+  "recommendation_letter",
+  "school_letter",
+  "certificates",
+  "other_documents",
+  "section_break_heuz",
+  "minimum_qualification_met",
+  "screened_by",
+  "screening_date",
+  "screening_comments",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "personal_information_section_section",
+   "fieldtype": "Section Break",
+   "label": "Personal Information Section"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "column_break_elek",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth"
+  },
+  {
+   "fieldname": "national_id",
+   "fieldtype": "Data",
+   "label": "National ID"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "section_break_hqvm",
+   "fieldtype": "Section Break",
+   "label": "Academic Information"
+  },
+  {
+   "fieldname": "institution",
+   "fieldtype": "Link",
+   "label": "Institution",
+   "options": "Institution"
+  },
+  {
+   "fieldname": "column_break_bilc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course"
+  },
+  {
+   "fieldname": "year_of_study",
+   "fieldtype": "Data",
+   "label": "Year Of Study"
+  },
+  {
+   "fieldname": "section_break_arsy",
+   "fieldtype": "Section Break",
+   "label": "Internship Details"
+  },
+  {
+   "fieldname": "preferred_department",
+   "fieldtype": "Link",
+   "label": "Preferred Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "internship_start_date",
+   "fieldtype": "Date",
+   "label": "Internship Start Date"
+  },
+  {
+   "fieldname": "internship_end_date",
+   "fieldtype": "Date",
+   "label": "Internship End Date"
+  },
+  {
+   "fieldname": "section_break_kcgy",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "recommendation_letter",
+   "fieldtype": "Attach",
+   "label": "Recommendation Letter"
+  },
+  {
+   "fieldname": "school_letter",
+   "fieldtype": "Attach",
+   "label": "School Letter"
+  },
+  {
+   "fieldname": "certificates",
+   "fieldtype": "Attach",
+   "label": "Certificates"
+  },
+  {
+   "fieldname": "other_documents",
+   "fieldtype": "Attach",
+   "label": "Other Documents"
+  },
+  {
+   "fieldname": "section_break_heuz",
+   "fieldtype": "Section Break",
+   "label": "Screening Fields"
+  },
+  {
+   "default": "0",
+   "fieldname": "minimum_qualification_met",
+   "fieldtype": "Check",
+   "label": "Minimum Qualification Met"
+  },
+  {
+   "fieldname": "screened_by",
+   "fieldtype": "Link",
+   "label": "Screened By",
+   "options": "User"
+  },
+  {
+   "fieldname": "screening_date",
+   "fieldtype": "Date",
+   "label": "Screening Date"
+  },
+  {
+   "fieldname": "screening_comments",
+   "fieldtype": "Small Text",
+   "label": "Screening Comments"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Received\nShortlisted\nInterview Scheduled\nOffered\nAccepted\nRejected\nRegret Sent"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-26 09:27:13.726098",
+ "modified_by": "Administrator",
+ "module": "Internship Management",
+ "name": "Internship Application",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Officer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Department Officer",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "Applicant",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
