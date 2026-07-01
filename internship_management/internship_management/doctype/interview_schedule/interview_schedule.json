@@ -7,24 +7,50 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "interview_information_tab",
+  "applicant_information_section",
   "application",
+  "vacancy",
+  "column_break_pcyr",
+  "department",
+  "position_title",
+  "interview_schedule_section",
   "interview_date",
-  "interview_time",
-  "interview_panel",
-  "column_break_rcgc",
-  "venue",
+  "interview_type",
   "meeting_link",
-  "status",
+  "date_scheduled",
+  "column_break_hpgi",
+  "interview_time",
+  "venue",
+  "duration",
+  "scheduled_by",
+  "interview_panel_tab",
+  "panel_members_section",
+  "interview_panel",
+  "candidate_evaluation_tab",
+  "interview_evaluation_section",
   "interview_evaluation",
-  "section_break_fkht",
-  "total_score"
+  "results_section",
+  "average_score",
+  "recommendation",
+  "evaluated_by",
+  "column_break_jkox",
+  "final_remarks",
+  "evaluation_date",
+  "status_tab",
+  "interview_status_section",
+  "interview_status",
+  "outcome",
+  "column_break_hhzj",
+  "hr_decision",
+  "decision_date"
  ],
  "fields": [
   {
    "fieldname": "application",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Application",
+   "label": "Applicant",
    "options": "Internship Application",
    "reqd": 1
   },
@@ -37,28 +63,19 @@
   {
    "fieldname": "interview_time",
    "fieldtype": "Time",
-   "label": "Interview Time",
-   "reqd": 1
+   "label": "Interview Time"
   },
   {
-   "fieldname": "column_break_rcgc",
-   "fieldtype": "Column Break"
-  },
-  {
+   "depends_on": "eval:doc.interview_type==\"In Person\"",
    "fieldname": "venue",
    "fieldtype": "Data",
    "label": "Venue"
   },
   {
+   "depends_on": "eval:doc.interview_type==\"Online\"",
    "fieldname": "meeting_link",
    "fieldtype": "Data",
    "label": "Meeting Link"
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Scheduled\nCompleted\nNo Show\nCancelled"
   },
   {
    "fieldname": "interview_panel",
@@ -67,26 +84,175 @@
    "options": "Interview Panel"
   },
   {
+   "fieldname": "applicant_information_section",
+   "fieldtype": "Section Break",
+   "label": "Applicant Information"
+  },
+  {
+   "fieldname": "vacancy",
+   "fieldtype": "Link",
+   "label": "Vacancy",
+   "options": "Internship Vacancy",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pcyr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "position_title",
+   "fieldtype": "Data",
+   "label": "Position Title"
+  },
+  {
+   "fieldname": "interview_schedule_section",
+   "fieldtype": "Section Break",
+   "label": "Interview Schedule"
+  },
+  {
+   "fieldname": "interview_type",
+   "fieldtype": "Select",
+   "label": "Interview Type",
+   "options": "In Person\nOnline\nPhone"
+  },
+  {
+   "fieldname": "date_scheduled",
+   "fieldtype": "Datetime",
+   "label": "Date Scheduled"
+  },
+  {
+   "fieldname": "column_break_hpgi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "scheduled_by",
+   "fieldtype": "Link",
+   "label": "Scheduled By",
+   "options": "User"
+  },
+  {
+   "fieldname": "interview_panel_tab",
+   "fieldtype": "Tab Break",
+   "label": "Interview Panel"
+  },
+  {
+   "fieldname": "panel_members_section",
+   "fieldtype": "Section Break",
+   "label": "Panel Members"
+  },
+  {
+   "fieldname": "candidate_evaluation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Candidate Evaluation"
+  },
+  {
+   "fieldname": "interview_evaluation_section",
+   "fieldtype": "Section Break",
+   "label": "Interview Evaluation"
+  },
+  {
    "fieldname": "interview_evaluation",
    "fieldtype": "Table",
    "label": "Interview Evaluation",
    "options": "Interview Evaluation"
   },
   {
-   "fieldname": "section_break_fkht",
-   "fieldtype": "Section Break"
+   "fieldname": "results_section",
+   "fieldtype": "Section Break",
+   "label": "Results"
   },
   {
-   "fieldname": "total_score",
+   "fieldname": "average_score",
    "fieldtype": "Float",
-   "label": "Total Score",
+   "label": "Average Score",
    "read_only": 1
+  },
+  {
+   "fieldname": "recommendation",
+   "fieldtype": "Select",
+   "label": "Recommendation",
+   "options": "Highly Recommended\nRecommended\nReserve List\nNot Recommended"
+  },
+  {
+   "fieldname": "evaluated_by",
+   "fieldtype": "Link",
+   "label": "Evaluated By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jkox",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "final_remarks",
+   "fieldtype": "Small Text",
+   "label": "Final Remarks"
+  },
+  {
+   "fieldname": "evaluation_date",
+   "fieldtype": "Datetime",
+   "label": "Evaluation Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_tab",
+   "fieldtype": "Tab Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "interview_status_section",
+   "fieldtype": "Section Break",
+   "label": "Interview Status"
+  },
+  {
+   "fieldname": "interview_status",
+   "fieldtype": "Select",
+   "label": "Interview Status",
+   "options": "Scheduled\nRescheduled\nCompleted\nCancelled\nNo Show\nEvaluation Pending"
+  },
+  {
+   "fieldname": "outcome",
+   "fieldtype": "Select",
+   "label": "Outcome",
+   "options": "Passed\nFailed\nAwaiting Decision"
+  },
+  {
+   "fieldname": "column_break_hhzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hr_decision",
+   "fieldtype": "Link",
+   "label": "HR Decision",
+   "options": "User"
+  },
+  {
+   "fieldname": "decision_date",
+   "fieldtype": "Date",
+   "label": "Decision Date"
+  },
+  {
+   "fieldname": "interview_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Interview Information"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-26 09:29:20.053953",
+ "modified": "2026-06-30 20:49:54.144004",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Interview Schedule",

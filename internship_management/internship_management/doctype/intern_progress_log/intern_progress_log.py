@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class InternActivity(Document):
+class InternProgressLog(Document):
 	pass

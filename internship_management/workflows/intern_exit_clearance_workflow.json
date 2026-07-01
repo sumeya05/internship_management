@@ -1,0 +1,20 @@
+{
+  "doc_type": "Intern Exit Clearance",
+  "workflow_name": "Intern Exit Clearance Workflow",
+  "states": [
+    {"state": "Pending Clearance", "action": "Pending Clearance"},
+    {"state": "Cleared", "action": "Cleared"},
+    {"state": "Closed", "action": "Closed"}
+  ],
+  "transitions": [
+    {"trigger": "clear", "source_state": "Pending Clearance", "target_state": "Cleared"},
+    {"trigger": "close", "source_state": "Cleared", "target_state": "Closed"}
+  ],
+  "field_mapping": {
+    "status": "status"
+  },
+  "date_locking": {
+    "lock_after_states": ["Cleared", "Closed"]
+  }
+}
+

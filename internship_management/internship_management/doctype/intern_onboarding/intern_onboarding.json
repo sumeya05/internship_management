@@ -9,16 +9,29 @@
  "field_order": [
   "intern_information_section",
   "intern",
-  "section_break_mqva",
+  "offer",
+  "reporting_date",
+  "orientation_tab",
+  "orientation_checklist_section",
+  "hr_orientation_completed",
+  "department_orientation_completed",
+  "compliance_tab",
+  "forms_section",
   "consent_form_signed",
-  "acknowledgement_form_signed",
-  "column_break_dqex",
+  "psea_training_completed",
+  "column_break_acsl",
   "code_of_conduct_signed",
-  "psea_awareness_completed",
-  "section_break_inqf",
-  "documents_uploaded",
-  "section_break_jnhy",
-  "completion_date",
+  "confidentiality_agreement_signed",
+  "resources_tab",
+  "id_badge_issued",
+  "workstation_assigned",
+  "column_break_knlu",
+  "email_created",
+  "supervisor_assigned",
+  "completion_tab",
+  "remarks_section",
+  "remarks",
+  "status_section",
   "status"
  ],
  "fields": [
@@ -37,9 +50,43 @@
    "label": "Intern Information"
   },
   {
-   "fieldname": "section_break_mqva",
+   "fieldname": "offer",
+   "fieldtype": "Link",
+   "label": "Offer",
+   "options": "Internship Offer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reporting_date",
+   "fieldtype": "Date",
+   "label": "Reporting Date"
+  },
+  {
+   "fieldname": "orientation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Orientation"
+  },
+  {
+   "fieldname": "orientation_checklist_section",
    "fieldtype": "Section Break",
-   "label": "Onboarding Checklist"
+   "label": "Orientation Checklist"
+  },
+  {
+   "default": "0",
+   "fieldname": "hr_orientation_completed",
+   "fieldtype": "Check",
+   "label": "HR Orientation Completed"
+  },
+  {
+   "default": "0",
+   "fieldname": "department_orientation_completed",
+   "fieldtype": "Check",
+   "label": "Department Orientation Completed"
+  },
+  {
+   "fieldname": "compliance_tab",
+   "fieldtype": "Tab Break",
+   "label": "Compliance"
   },
   {
    "default": "0",
@@ -49,60 +96,95 @@
   },
   {
    "default": "0",
-   "fieldname": "acknowledgement_form_signed",
+   "fieldname": "code_of_conduct_signed",
    "fieldtype": "Check",
-   "label": "Acknowledgement Form Signed"
+   "label": "Code of Conduct Signed"
   },
   {
    "default": "0",
-   "fieldname": "code_of_conduct_signed",
+   "fieldname": "confidentiality_agreement_signed",
    "fieldtype": "Check",
-   "label": "Code Of Conduct Signed"
+   "label": "Confidentiality Agreement Signed"
   },
   {
-   "fieldname": "column_break_dqex",
+   "default": "0",
+   "fieldname": "psea_training_completed",
+   "fieldtype": "Check",
+   "label": "PSEA Training Completed"
+  },
+  {
+   "fieldname": "resources_tab",
+   "fieldtype": "Tab Break",
+   "label": "Resources"
+  },
+  {
+   "default": "0",
+   "fieldname": "id_badge_issued",
+   "fieldtype": "Check",
+   "label": "ID Badge Issued"
+  },
+  {
+   "default": "0",
+   "fieldname": "workstation_assigned",
+   "fieldtype": "Check",
+   "label": "Workstation Assigned"
+  },
+  {
+   "fieldname": "column_break_knlu",
    "fieldtype": "Column Break"
   },
   {
    "default": "0",
-   "fieldname": "psea_awareness_completed",
+   "fieldname": "email_created",
    "fieldtype": "Check",
-   "label": "PSEA Awareness Completed"
+   "label": "Email Created"
   },
   {
-   "fieldname": "section_break_inqf",
+   "default": "0",
+   "fieldname": "supervisor_assigned",
+   "fieldtype": "Check",
+   "label": "Supervisor Assigned"
+  },
+  {
+   "fieldname": "forms_section",
    "fieldtype": "Section Break",
-   "label": "Supporting Documents"
+   "label": "Forms"
   },
   {
-   "fieldname": "documents_uploaded",
-   "fieldtype": "Attach",
-   "label": "Documents Uploaded"
+   "fieldname": "column_break_acsl",
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_jnhy",
+   "fieldname": "completion_tab",
+   "fieldtype": "Tab Break",
+   "label": "Completion"
+  },
+  {
+   "fieldname": "remarks_section",
    "fieldtype": "Section Break",
-   "label": "Completion Information"
+   "label": "Remarks"
   },
   {
-   "fieldname": "completion_date",
-   "fieldtype": "Date",
-   "label": "Completion Date",
-   "read_only": 1
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
   },
   {
-   "default": "Pending",
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status",
+   "options": "Draft\nIn Progress\nCompleted\nCancelled"
+  },
+  {
    "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Status",
-   "options": "Pending\nCompleted",
-   "reqd": 1
+   "label": "Status"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-25 10:40:39.462833",
+ "modified": "2026-06-30 20:47:58.724777",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Intern Onboarding",

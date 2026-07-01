@@ -2,59 +2,54 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "INTN-.YYYY.-.####",
+ "autoname": "INTERN-.YYYY.-.####",
  "creation": "2026-06-25 09:43:04.407855",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "personal_information_tab",
   "personal_information_section",
   "intern_name",
-  "email",
-  "phone",
-  "institution",
-  "column_break_swpi",
-  "national_id",
-  "gender",
-  "date_of_birth",
-  "course",
-  "section_break_jmtf",
+  "applicant",
   "department",
+  "contact_information_section",
+  "email",
+  "phone_number",
+  "internship_information_tab",
+  "placement_section",
   "supervisor",
-  "column_break_pnsp",
   "start_date",
-  "expected_end_date",
-  "section_break_oeyb",
-  "current_status"
+  "column_break_rusj",
+  "end_date",
+  "duration",
+  "current_status_section",
+  "internship_status",
+  "tab_3_tab",
+  "monitoring_section",
+  "performance_rating",
+  "attendance_percentage",
+  "completion_section",
+  "extension_granted",
+  "exit_status"
  ],
  "fields": [
   {
    "fieldname": "intern_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Intern Name",
+   "label": "Intern ID",
+   "read_only": 1,
    "reqd": 1
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email",
-   "reqd": 1
-  },
-  {
-   "fieldname": "phone",
-   "fieldtype": "Data",
-   "label": "Phone",
-   "reqd": 1
+   "label": "Email"
   },
   {
    "fieldname": "personal_information_section",
    "fieldtype": "Section Break",
-   "label": "Personal Information"
-  },
-  {
-   "fieldname": "section_break_jmtf",
-   "fieldtype": "Section Break",
-   "label": "Placement Information"
+   "label": "Intern Details"
   },
   {
    "fieldname": "department",
@@ -64,11 +59,37 @@
    "reqd": 1
   },
   {
+   "fieldname": "applicant",
+   "fieldtype": "Link",
+   "label": "Applicant",
+   "options": "Internship Application",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_information_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "internship_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Internship Information"
+  },
+  {
+   "fieldname": "placement_section",
+   "fieldtype": "Section Break",
+   "label": "Placement"
+  },
+  {
    "fieldname": "supervisor",
    "fieldtype": "Link",
    "label": "Supervisor",
-   "options": "Supervisor",
-   "reqd": 1
+   "options": "User"
   },
   {
    "fieldname": "start_date",
@@ -77,69 +98,81 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_pnsp",
+   "fieldname": "column_break_rusj",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "expected_end_date",
+   "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "Expected End Date",
+   "label": "End Date",
    "reqd": 1
   },
   {
-   "fieldname": "section_break_oeyb",
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration",
+   "read_only": 1
+  },
+  {
+   "fieldname": "monitoring_section",
    "fieldtype": "Section Break",
-   "label": "Status"
+   "label": "Monitoring"
   },
   {
-   "default": "Onboarding",
-   "fieldname": "current_status",
+   "fieldname": "performance_rating",
    "fieldtype": "Select",
-   "label": "Current Status",
-   "options": "Onboarding\nActive\nExtended\nExited",
-   "reqd": 1
+   "label": "Performance Rating",
+   "options": "Excellent\nVery Good\nGood\nFair\nPoor"
   },
   {
-   "fieldname": "column_break_swpi",
-   "fieldtype": "Column Break"
+   "fieldname": "attendance_percentage",
+   "fieldtype": "Percent",
+   "label": "Attendance Percentage",
+   "read_only": 1
   },
   {
-   "fieldname": "national_id",
-   "fieldtype": "Data",
-   "label": "National ID",
-   "reqd": 1
+   "fieldname": "completion_section",
+   "fieldtype": "Section Break",
+   "label": "Completion"
   },
   {
-   "fieldname": "gender",
+   "default": "0",
+   "fieldname": "extension_granted",
+   "fieldtype": "Check",
+   "label": "Extension Granted"
+  },
+  {
+   "fieldname": "exit_status",
    "fieldtype": "Select",
-   "label": "Gender",
-   "options": "Male\nFemale\nOther"
+   "label": "Exit Status",
+   "options": "Pending\nIn Progress\nCleared\nCompleted\nNot Cleared"
   },
   {
-   "fieldname": "date_of_birth",
-   "fieldtype": "Date",
-   "label": "Date of Birth",
-   "reqd": 1
+   "fieldname": "current_status_section",
+   "fieldtype": "Section Break",
+   "label": "Current Status"
   },
   {
-   "fieldname": "institution",
-   "fieldtype": "Link",
-   "label": "Institution",
-   "options": "Institution",
-   "reqd": 1
+   "fieldname": "internship_status",
+   "fieldtype": "Select",
+   "label": "Internship Status",
+   "options": "Active\nOn Hold\nCompleted\nExtended\nTerminated"
   },
   {
-   "fieldname": "course",
-   "fieldtype": "Link",
-   "label": "Course",
-   "options": "Course",
-   "reqd": 1
+   "fieldname": "personal_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Personal Information"
+  },
+  {
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "Performance"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-26 09:41:46.752194",
+ "modified": "2026-06-30 20:40:42.199710",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Intern Profile",

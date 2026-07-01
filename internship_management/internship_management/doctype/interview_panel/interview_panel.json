@@ -9,7 +9,10 @@
  "field_order": [
   "panel_member",
   "designation",
-  "role"
+  "role",
+  "column_break_pejn",
+  "email",
+  "present"
  ],
  "fields": [
   {
@@ -25,15 +28,31 @@
   },
   {
    "fieldname": "role",
+   "fieldtype": "Select",
+   "label": "Role",
+   "options": "Chairperson\nMember\nHR Representative\nObserver"
+  },
+  {
+   "fieldname": "column_break_pejn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Role"
+   "label": "Email"
+  },
+  {
+   "default": "0",
+   "fieldname": "present",
+   "fieldtype": "Check",
+   "label": "Present"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-06-24 16:47:36.378215",
+ "modified": "2026-06-30 12:54:16.936731",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Interview Panel",

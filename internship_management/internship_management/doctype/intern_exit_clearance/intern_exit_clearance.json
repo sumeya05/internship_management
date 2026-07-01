@@ -2,31 +2,46 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "EXIT-.YYYY.-.####",
+ "autoname": "CLR-.YYYY.-.#####",
  "creation": "2026-06-25 15:38:44.512597",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "exit_information_tab",
   "section_break_ey5x",
-  "amended_from",
   "intern",
+  "clearance_number",
+  "column_break_kedp",
   "exit_date",
-  "exit_assessment_section",
-  "exit_interview_conducted",
-  "ict_clearance",
-  "column_break_tgvi",
+  "supervisor",
+  "amended_from",
+  "clearance_checklist_tab",
+  "department_clearance_section",
+  "department_clearance",
   "hr_clearance",
-  "section_break_gkky",
-  "exit_notes",
-  "recommendation_required",
-  "recommendation_letter",
+  "column_break_esdn",
+  "ict_clearance",
+  "assets_returned",
+  "exit_interview_tab",
+  "exit_process_section",
+  "exit_interview_completed",
+  "exit_feedback",
+  "recommendation_tab",
+  "final_assessment_section",
+  "final_supervisor_rating",
+  "recommendation_letter_issued",
+  "certificate_issued",
+  "remarks_section",
+  "final_remarks",
+  "status_tab",
+  "clearance_status_section",
   "status"
  ],
  "fields": [
   {
    "fieldname": "section_break_ey5x",
    "fieldtype": "Section Break",
-   "label": "Intern Information"
+   "label": "Intern Details"
   },
   {
    "fieldname": "amended_from",
@@ -53,25 +68,41 @@
    "reqd": 1
   },
   {
-   "fieldname": "exit_assessment_section",
-   "fieldtype": "Section Break",
-   "label": "Exit Assessment"
+   "fieldname": "clearance_number",
+   "fieldtype": "Data",
+   "label": "Clearance Number",
+   "read_only": 1
   },
   {
-   "default": "0",
-   "fieldname": "exit_interview_conducted",
-   "fieldtype": "Check",
-   "label": "Exit Interview Conducted"
-  },
-  {
-   "default": "0",
-   "fieldname": "ict_clearance",
-   "fieldtype": "Check",
-   "label": "ICT Clearance"
-  },
-  {
-   "fieldname": "column_break_tgvi",
+   "fieldname": "column_break_kedp",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "label": "Supervisor",
+   "options": "Supervisor"
+  },
+  {
+   "fieldname": "exit_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Exit Information"
+  },
+  {
+   "fieldname": "clearance_checklist_tab",
+   "fieldtype": "Tab Break",
+   "label": "Clearance Checklist"
+  },
+  {
+   "fieldname": "department_clearance_section",
+   "fieldtype": "Section Break",
+   "label": "Department Clearance"
+  },
+  {
+   "default": "0",
+   "fieldname": "department_clearance",
+   "fieldtype": "Check",
+   "label": "Department Clearance"
   },
   {
    "default": "0",
@@ -80,40 +111,102 @@
    "label": "HR Clearance"
   },
   {
-   "fieldname": "exit_notes",
-   "fieldtype": "Small Text",
-   "label": "Exit Notes"
-  },
-  {
-   "fieldname": "section_break_gkky",
-   "fieldtype": "Section Break",
-   "label": "Exit Details"
+   "fieldname": "column_break_esdn",
+   "fieldtype": "Column Break"
   },
   {
    "default": "0",
-   "fieldname": "recommendation_required",
+   "fieldname": "ict_clearance",
    "fieldtype": "Check",
-   "label": "Recommendation Required"
+   "label": "ICT Clearance"
   },
   {
-   "fieldname": "recommendation_letter",
-   "fieldtype": "Attach",
-   "label": "Recommendation Letter"
+   "default": "0",
+   "fieldname": "assets_returned",
+   "fieldtype": "Check",
+   "label": "Assets Returned"
   },
   {
-   "default": "Pending Clearance",
+   "fieldname": "exit_interview_tab",
+   "fieldtype": "Tab Break",
+   "label": "Exit Interview"
+  },
+  {
+   "fieldname": "exit_process_section",
+   "fieldtype": "Section Break",
+   "label": "Exit Process"
+  },
+  {
+   "default": "0",
+   "fieldname": "exit_interview_completed",
+   "fieldtype": "Check",
+   "label": "Exit Interview Completed"
+  },
+  {
+   "fieldname": "exit_feedback",
+   "fieldtype": "Small Text",
+   "label": "Exit Feedback"
+  },
+  {
+   "fieldname": "recommendation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Recommendation"
+  },
+  {
+   "fieldname": "final_assessment_section",
+   "fieldtype": "Section Break",
+   "label": "Final Assessment"
+  },
+  {
+   "fieldname": "final_supervisor_rating",
+   "fieldtype": "Select",
+   "label": "Final Supervisor Rating",
+   "options": "Excellent\nVery Good\nGood\nSatisfactory\nNeeds Improvement"
+  },
+  {
+   "default": "0",
+   "fieldname": "recommendation_letter_issued",
+   "fieldtype": "Check",
+   "label": "Recommendation Letter Issued"
+  },
+  {
+   "default": "0",
+   "fieldname": "certificate_issued",
+   "fieldtype": "Check",
+   "label": "Certificate Issued"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "final_remarks",
+   "fieldtype": "Small Text",
+   "label": "Final Remarks"
+  },
+  {
+   "fieldname": "status_tab",
+   "fieldtype": "Tab Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "clearance_status_section",
+   "fieldtype": "Section Break",
+   "label": "Clearance Status"
+  },
+  {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Pending Clearance\nCleared\nClosed",
-   "reqd": 1
+   "options": "Draft\nIn Progress\nPending Clearance\nCompleted\nClosed"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-25 16:34:19.407625",
+ "modified": "2026-06-30 20:42:49.716370",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Intern Exit Clearance",

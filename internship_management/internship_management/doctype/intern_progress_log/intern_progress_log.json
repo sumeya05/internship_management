@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "LOG-.YYYY.-.#####",
+ "creation": "2026-06-25 10:47:12.970786",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "progress_information_tab",
+  "activity_information_section",
+  "intern",
+  "supervisor",
+  "column_break_ueqb",
+  "week_number",
+  "log_date",
+  "tab_2_tab",
+  "section_break_wbpr",
+  "assigned_tasks",
+  "performance_tab",
+  "weekly_review_section",
+  "achievements",
+  "supervisor_comments",
+  "column_break_ockt",
+  "challenges",
+  "evaluation_section",
+  "progress_rating",
+  "column_break_assx",
+  "attendance",
+  "status_tab",
+  "current_status_section",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "intern",
+   "fieldtype": "Link",
+   "label": "Intern",
+   "options": "Intern Profile"
+  },
+  {
+   "fieldname": "activity_information_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "label": "Supervisor",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ueqb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "week_number",
+   "fieldtype": "Int",
+   "label": "Week Number"
+  },
+  {
+   "fieldname": "log_date",
+   "fieldtype": "Date",
+   "label": "Log Date"
+  },
+  {
+   "fieldname": "progress_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Progress Information"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Assigned Tasks"
+  },
+  {
+   "fieldname": "section_break_wbpr",
+   "fieldtype": "Section Break",
+   "label": "Assigned Tasks"
+  },
+  {
+   "fieldname": "assigned_tasks",
+   "fieldtype": "Table",
+   "label": "Assigned Tasks",
+   "options": "Assigned Tasks"
+  },
+  {
+   "fieldname": "performance_tab",
+   "fieldtype": "Tab Break",
+   "label": "Performance"
+  },
+  {
+   "fieldname": "weekly_review_section",
+   "fieldtype": "Section Break",
+   "label": "Weekly Review"
+  },
+  {
+   "fieldname": "achievements",
+   "fieldtype": "Small Text",
+   "label": "Achievements"
+  },
+  {
+   "fieldname": "supervisor_comments",
+   "fieldtype": "Small Text",
+   "label": "Supervisor Comments"
+  },
+  {
+   "fieldname": "column_break_ockt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "challenges",
+   "fieldtype": "Small Text",
+   "label": "Challenges"
+  },
+  {
+   "fieldname": "evaluation_section",
+   "fieldtype": "Section Break",
+   "label": "Evaluation"
+  },
+  {
+   "fieldname": "progress_rating",
+   "fieldtype": "Select",
+   "label": "Progress Rating",
+   "options": "Excellent\nVery Good\nGood\nSatisfactory\nNeeds Improvement"
+  },
+  {
+   "fieldname": "column_break_assx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attendance",
+   "fieldtype": "Percent",
+   "label": "Attendance"
+  },
+  {
+   "fieldname": "status_tab",
+   "fieldtype": "Tab Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "current_status_section",
+   "fieldtype": "Section Break",
+   "label": "Current Status"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nReviewed\nApproved\nRejected"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-30 20:47:29.567643",
+ "modified_by": "Administrator",
+ "module": "Internship Management",
+ "name": "Intern Progress Log",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

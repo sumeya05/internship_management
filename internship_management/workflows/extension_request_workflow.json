@@ -1,0 +1,20 @@
+{
+  "doc_type": "Extension Request",
+  "workflow_name": "Extension Request Workflow",
+  "states": [
+    {"state": "Pending", "action": "Pending"},
+    {"state": "Approved", "action": "Approved"},
+    {"state": "Rejected", "action": "Rejected"}
+  ],
+  "transitions": [
+    {"trigger": "approve", "source_state": "Pending", "target_state": "Approved"},
+    {"trigger": "reject", "source_state": "Pending", "target_state": "Rejected"}
+  ],
+  "field_mapping": {
+    "status": "status"
+  },
+  "date_locking": {
+    "lock_after_states": ["Approved", "Rejected"]
+  }
+}
+

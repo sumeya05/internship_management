@@ -7,29 +7,44 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "vacancy_information_tab",
+  "basic_information_section",
   "vacancy_title",
   "department",
-  "required_skills",
   "column_break_vxba",
+  "vacancy_id",
   "location",
-  "number_of_vacancies",
+  "amended_from",
+  "section_break_xicf",
+  "number_of_positions",
+  "internship_category",
+  "column_break_hmiq",
+  "duration",
+  "start_date",
+  "end_date",
+  "tab_2_tab",
+  "qualifications_section",
   "required_qualifications",
-  "section_break_oncf",
-  "duration_months",
-  "requested_by",
-  "request_date",
-  "hr_comments",
-  "status",
-  "column_break_jyhm",
+  "required_skills",
+  "section_break_eeqs",
   "responsibilities",
+  "tab_3_tab",
+  "supervisor_information_section",
   "reporting_supervisor",
-  "amended_from"
+  "section_break_wjca",
+  "approval_status",
+  "approved_by",
+  "date_approved",
+  "section_break_egfc",
+  "application_deadline"
  ],
  "fields": [
   {
    "fieldname": "vacancy_title",
    "fieldtype": "Data",
-   "label": "Vacancy Title"
+   "in_list_view": 1,
+   "label": "Vacancy Title",
+   "reqd": 1
   },
   {
    "fieldname": "amended_from",
@@ -44,8 +59,10 @@
   {
    "fieldname": "department",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Department",
-   "options": "Department"
+   "options": "Department",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_vxba",
@@ -54,12 +71,69 @@
   {
    "fieldname": "location",
    "fieldtype": "Data",
-   "label": "Location"
+   "in_list_view": 1,
+   "label": "Location",
+   "reqd": 1
   },
   {
-   "fieldname": "number_of_vacancies",
+   "fieldname": "vacancy_id",
+   "fieldtype": "Data",
+   "label": "Vacancy ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "basic_information_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "section_break_xicf",
+   "fieldtype": "Section Break",
+   "label": "Position Details"
+  },
+  {
+   "fieldname": "number_of_positions",
    "fieldtype": "Int",
-   "label": "Number of Vacancies"
+   "in_list_view": 1,
+   "label": "Number of Positions",
+   "reqd": 1
+  },
+  {
+   "fieldname": "internship_category",
+   "fieldtype": "Data",
+   "label": "Internship Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hmiq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vacancy_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Vacancy Information"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Requirements"
   },
   {
    "fieldname": "required_qualifications",
@@ -67,63 +141,81 @@
    "label": "Required Qualifications"
   },
   {
-   "fieldname": "section_break_oncf",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "required_skills",
-   "fieldtype": "Small Text",
-   "label": "Required Skills"
+   "fieldtype": "Data",
+   "label": "Required Skills",
+   "reqd": 1
   },
   {
-   "fieldname": "column_break_jyhm",
-   "fieldtype": "Column Break"
+   "fieldname": "qualifications_section",
+   "fieldtype": "Section Break",
+   "label": "Qualifications"
   },
   {
-   "fieldname": "responsibilities",
-   "fieldtype": "Text Editor",
+   "fieldname": "section_break_eeqs",
+   "fieldtype": "Section Break",
    "label": "Responsibilities"
   },
   {
-   "fieldname": "duration_months",
-   "fieldtype": "Int",
-   "label": "Duration Months"
+   "fieldname": "responsibilities",
+   "fieldtype": "Data",
+   "label": "Internship Responsibilities"
+  },
+  {
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "Approval & Publication"
   },
   {
    "fieldname": "reporting_supervisor",
-   "fieldtype": "Link",
-   "label": "Reporting Supervisor",
-   "options": "Supervisor"
+   "fieldtype": "Data",
+   "label": "Reporting Supervisor"
   },
   {
-   "fieldname": "requested_by",
+   "fieldname": "supervisor_information_section",
+   "fieldtype": "Section Break",
+   "label": "Supervisor Information"
+  },
+  {
+   "fieldname": "section_break_wjca",
+   "fieldtype": "Section Break",
+   "label": "HR Approval"
+  },
+  {
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "label": "Approval Status",
+   "options": "Draft\nPending Approval\nApproved\nPublished\nClosed\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_by",
    "fieldtype": "Link",
-   "label": "Requested By",
+   "label": "Approved By",
    "options": "User"
   },
   {
-   "fieldname": "request_date",
+   "default": "Today",
+   "fieldname": "date_approved",
    "fieldtype": "Date",
-   "label": "Request Date"
+   "label": "Date Approved"
   },
   {
-   "fieldname": "hr_comments",
-   "fieldtype": "Small Text",
-   "label": "HR Comments",
-   "options": "Draft\nPending HR Approval\nApproved\nRejected\n"
+   "fieldname": "section_break_egfc",
+   "fieldtype": "Section Break",
+   "label": "Publication"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Draft\nPending HR Approval\nApproved\nRejected"
+   "fieldname": "application_deadline",
+   "fieldtype": "Data",
+   "label": "Application Deadline"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-26 09:17:16.850327",
+ "modified": "2026-06-30 21:05:49.217908",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Internship Vacancy",

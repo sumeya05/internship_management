@@ -1,0 +1,31 @@
+{
+  "doc_type": "Internship Application",
+  "workflow_name": "Internship Application Workflow",
+  "states": [
+    {"state": "Received", "action": "Received"},
+    {"state": "Shortlisted", "action": "Shortlisted"},
+    {"state": "Interview Scheduled", "action": "Interview Scheduled"},
+    {"state": "Offered", "action": "Offered"},
+    {"state": "Accepted", "action": "Accepted"},
+    {"state": "Rejected", "action": "Rejected"},
+    {"state": "Regret Sent", "action": "Regret Sent"}
+  ],
+  "transitions": [
+    {"trigger": "submit", "source_state": "Received", "target_state": "Shortlisted"},
+    {"trigger": "shortlist", "source_state": "Received", "target_state": "Shortlisted"},
+    {"trigger": "schedule_interview", "source_state": "Shortlisted", "target_state": "Interview Scheduled"},
+    {"trigger": "offer", "source_state": "Interview Scheduled", "target_state": "Offered"},
+    {"trigger": "accept", "source_state": "Offered", "target_state": "Accepted"},
+    {"trigger": "reject", "source_state": "Received", "target_state": "Rejected"},
+    {"trigger": "reject_shortlisted", "source_state": "Shortlisted", "target_state": "Rejected"},
+    {"trigger": "reject_scheduled", "source_state": "Interview Scheduled", "target_state": "Rejected"},
+    {"trigger": "regret", "source_state": "Offered", "target_state": "Regret Sent"}
+  ],
+  "field_mapping": {
+    "status": "status"
+  },
+  "date_locking": {
+    "lock_after_states": ["Accepted", "Rejected", "Regret Sent"]
+  }
+}
+

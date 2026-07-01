@@ -7,57 +7,120 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "v_tab",
   "personal_information_section_section",
   "first_name",
-  "last_name",
   "date_of_birth",
   "email",
+  "nationality",
   "column_break_elek",
-  "middle_name",
+  "last_name",
   "gender",
   "national_id",
   "phone",
-  "section_break_hqvm",
-  "institution",
-  "year_of_study",
-  "column_break_bilc",
+  "section_break_lvam",
+  "county",
+  "towncity",
+  "ward",
+  "sub_county",
+  "postal_address",
+  "column_break_swhk",
+  "physical_address",
+  "contact_person",
+  "phone_number",
+  "email_address",
+  "tab_2_tab",
+  "institution_information_section",
+  "institution_name",
+  "department",
   "course",
-  "section_break_arsy",
+  "column_break_fnnn",
+  "student_registration_number",
+  "level_of_study",
+  "section_break_mnmw",
+  "year_of_study",
+  "column_break_ojmm",
+  "graduated_date",
+  "section_break_xexh",
+  "skills",
+  "tab_3_tab",
+  "internship_preference_section",
+  "vacancy_applied_for",
   "preferred_department",
+  "preferred_location",
+  "column_break_gwxq",
   "internship_start_date",
   "internship_end_date",
-  "section_break_kcgy",
-  "recommendation_letter",
+  "internship_duration",
+  "section_break_dfdl",
+  "is_this_internship_required_by_your_institution",
+  "school_supervisor_required",
+  "university_attachment_letter_available",
+  "section_break_rrlm",
+  "why_do_you_want_to_join_our_internship_programme",
+  "section_break_qcad",
+  "available_from",
+  "available_until",
+  "tab_4_tab",
+  "document_section",
+  "national_id_copy",
+  "column_break_rlnh",
+  "passport_photo",
+  "academic_documents_section",
   "school_letter",
+  "academic_transcript",
+  "supporting_documents_section",
   "certificates",
-  "other_documents",
-  "section_break_heuz",
-  "minimum_qualification_met",
+  "curriculum_vitae_cv",
+  "other_supporting_documents",
+  "tab_6_tab",
+  "screening_status_section",
+  "application_status",
+  "meets_minimum_requirements",
+  "shortlisted",
+  "screening_decision",
+  "qualifications_verified_section",
+  "check_xeti",
+  "required_documents_complete",
+  "cv_reviewed",
+  "column_break_zdpr",
+  "national_id_verified",
+  "school_letter_verified",
+  "section_break_uwul",
   "screened_by",
+  "screening_remarks",
+  "column_break_scne",
   "screening_date",
-  "screening_comments",
-  "status"
+  "recommendation",
+  "rejection_information_section",
+  "rejection_reason",
+  "column_break_rdyy",
+  "regret_email_sent",
+  "notification_date",
+  "tab_5_tab",
+  "i_declare_that_the_information_is_accurate",
+  "applicant_signature",
+  "column_break_gisn",
+  "date"
  ],
  "fields": [
   {
    "fieldname": "personal_information_section_section",
    "fieldtype": "Section Break",
-   "label": "Personal Information Section"
+   "label": "Personal Information"
   },
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "label": "First Name"
-  },
-  {
-   "fieldname": "middle_name",
-   "fieldtype": "Data",
-   "label": "Middle Name"
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
   },
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "label": "Last Name"
+   "label": "Last Name",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_elek",
@@ -65,13 +128,17 @@
   },
   {
    "fieldname": "gender",
-   "fieldtype": "Data",
-   "label": "Gender"
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Female\nMale\nOthers",
+   "reqd": 1
   },
   {
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
-   "label": "Date Of Birth"
+   "in_list_view": 1,
+   "label": "Date Of Birth",
+   "reqd": 1
   },
   {
    "fieldname": "national_id",
@@ -81,95 +148,428 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1
   },
   {
    "fieldname": "phone",
    "fieldtype": "Data",
-   "label": "Phone"
+   "label": "Phone",
+   "reqd": 1
   },
   {
-   "fieldname": "section_break_hqvm",
-   "fieldtype": "Section Break",
-   "label": "Academic Information"
-  },
-  {
-   "fieldname": "institution",
+   "fieldname": "nationality",
    "fieldtype": "Link",
-   "label": "Institution",
-   "options": "Institution"
+   "in_list_view": 1,
+   "label": "Nationality",
+   "options": "Country",
+   "reqd": 1
   },
   {
-   "fieldname": "column_break_bilc",
+   "fieldname": "county",
+   "fieldtype": "Link",
+   "label": "County",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "v_tab",
+   "fieldtype": "Tab Break",
+   "label": "Personal Information"
+  },
+  {
+   "fieldname": "sub_county",
+   "fieldtype": "Data",
+   "label": "Sub County",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ward",
+   "fieldtype": "Data",
+   "label": "Ward",
+   "reqd": 1
+  },
+  {
+   "fieldname": "towncity",
+   "fieldtype": "Data",
+   "label": "Town/City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "physical_address",
+   "fieldtype": "Small Text",
+   "label": "Physical Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "postal_address",
+   "fieldtype": "Small Text",
+   "label": "Postal Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "section_break_lvam",
+   "fieldtype": "Section Break",
+   "label": "Location And Contact"
+  },
+  {
+   "fieldname": "column_break_swhk",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Education",
+   "not_nullable": 1
+  },
+  {
+   "fieldname": "institution_name",
+   "fieldtype": "Link",
+   "label": "Institution Name",
+   "options": "Institution",
+   "reqd": 1
+  },
+  {
+   "fieldname": "institution_information_section",
+   "fieldtype": "Section Break",
+   "label": "Institution Information"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
   },
   {
    "fieldname": "course",
    "fieldtype": "Link",
    "label": "Course",
-   "options": "Course"
+   "options": "Course",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_fnnn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "student_registration_number",
+   "fieldtype": "Data",
+   "label": "Student Registration Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "level_of_study",
+   "fieldtype": "Select",
+   "label": "Level of Study",
+   "options": "Certificate\nDiploma\nDegree\nMasters\nPhD",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_mnmw",
+   "fieldtype": "Section Break",
+   "label": "Study Information"
   },
   {
    "fieldname": "year_of_study",
-   "fieldtype": "Data",
-   "label": "Year Of Study"
+   "fieldtype": "Select",
+   "label": "Year of Study",
+   "options": "1st Year\n2nd Year\n3rd Year\n4th Year\n5th Year\nGraduate",
+   "reqd": 1
   },
   {
-   "fieldname": "section_break_arsy",
+   "fieldname": "column_break_ojmm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "graduated_date",
+   "fieldtype": "Date",
+   "label": "Graduated Date"
+  },
+  {
+   "fieldname": "section_break_xexh",
    "fieldtype": "Section Break",
+   "label": "Skills"
+  },
+  {
+   "fieldname": "skills",
+   "fieldtype": "Small Text",
+   "label": "Skills"
+  },
+  {
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
    "label": "Internship Details"
+  },
+  {
+   "fieldname": "vacancy_applied_for",
+   "fieldtype": "Link",
+   "label": "Vacancy Applied For",
+   "options": "Internship Vacancy",
+   "reqd": 1
+  },
+  {
+   "fieldname": "internship_preference_section",
+   "fieldtype": "Section Break",
+   "label": "Internship Preference"
   },
   {
    "fieldname": "preferred_department",
    "fieldtype": "Link",
    "label": "Preferred Department",
-   "options": "Department"
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "preferred_location",
+   "fieldtype": "Data",
+   "label": "Preferred Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gwxq",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "internship_start_date",
    "fieldtype": "Date",
-   "label": "Internship Start Date"
+   "label": "Internship Start Date",
+   "reqd": 1
   },
   {
    "fieldname": "internship_end_date",
    "fieldtype": "Date",
-   "label": "Internship End Date"
+   "label": "Internship End Date",
+   "reqd": 1
   },
   {
-   "fieldname": "section_break_kcgy",
+   "fieldname": "internship_duration",
+   "fieldtype": "Data",
+   "label": "Internship Duration"
+  },
+  {
+   "fieldname": "section_break_dfdl",
    "fieldtype": "Section Break",
-   "label": "Attachments"
+   "label": "Academic Requirement"
   },
   {
-   "fieldname": "recommendation_letter",
-   "fieldtype": "Attach",
-   "label": "Recommendation Letter"
+   "default": "0",
+   "fieldname": "is_this_internship_required_by_your_institution",
+   "fieldtype": "Check",
+   "label": "Is this internship required by your institution?"
   },
   {
-   "fieldname": "school_letter",
+   "default": "0",
+   "fieldname": "school_supervisor_required",
+   "fieldtype": "Check",
+   "label": "School Supervisor Required?"
+  },
+  {
+   "default": "0",
+   "fieldname": "university_attachment_letter_available",
+   "fieldtype": "Check",
+   "label": "University Attachment Letter Available?"
+  },
+  {
+   "fieldname": "section_break_rrlm",
+   "fieldtype": "Section Break",
+   "label": "Motivation"
+  },
+  {
+   "fieldname": "why_do_you_want_to_join_our_internship_programme",
+   "fieldtype": "Text",
+   "label": "Why do you want to join our internship programme?"
+  },
+  {
+   "fieldname": "section_break_qcad",
+   "fieldtype": "Section Break",
+   "label": "Availability"
+  },
+  {
+   "fieldname": "available_from",
+   "fieldtype": "Date",
+   "label": "Available From"
+  },
+  {
+   "fieldname": "available_until",
+   "fieldtype": "Date",
+   "label": "Available Until"
+  },
+  {
+   "fieldname": "tab_4_tab",
+   "fieldtype": "Tab Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "national_id_copy",
    "fieldtype": "Attach",
-   "label": "School Letter"
+   "label": "National ID Copy"
+  },
+  {
+   "fieldname": "curriculum_vitae_cv",
+   "fieldtype": "Attach",
+   "label": "Curriculum Vitae (CV)",
+   "reqd": 1
   },
   {
    "fieldname": "certificates",
    "fieldtype": "Attach",
-   "label": "Certificates"
+   "label": "Certificates",
+   "reqd": 1
   },
   {
-   "fieldname": "other_documents",
+   "fieldname": "column_break_rlnh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "school_letter",
    "fieldtype": "Attach",
-   "label": "Other Documents"
+   "label": "School Letter",
+   "reqd": 1
   },
   {
-   "fieldname": "section_break_heuz",
+   "fieldname": "academic_transcript",
+   "fieldtype": "Attach",
+   "label": "Academic Transcript"
+  },
+  {
+   "fieldname": "other_supporting_documents",
+   "fieldtype": "Attach",
+   "label": "Other Supporting Documents"
+  },
+  {
+   "fieldname": "document_section",
    "fieldtype": "Section Break",
-   "label": "Screening Fields"
+   "label": "Identification Documents"
+  },
+  {
+   "fieldname": "tab_5_tab",
+   "fieldtype": "Tab Break",
+   "label": "Declaration"
+  },
+  {
+   "fieldname": "applicant_signature",
+   "fieldtype": "Signature",
+   "label": "Applicant Signature"
+  },
+  {
+   "fieldname": "column_break_gisn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tab_6_tab",
+   "fieldtype": "Tab Break",
+   "label": "Screening"
+  },
+  {
+   "fieldname": "academic_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Academic Documents"
+  },
+  {
+   "fieldname": "supporting_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Supporting Documents"
+  },
+  {
+   "fieldname": "passport_photo",
+   "fieldtype": "Attach",
+   "label": "Passport Photo"
+  },
+  {
+   "fieldname": "application_status",
+   "fieldtype": "Select",
+   "label": "Application Status",
+   "options": "Submitted\nUnder Review\nShortlisted\nRejected\nInterview Scheduled\nOffered\nAccepted\nWithdrawn"
+  },
+  {
+   "fieldname": "screening_status_section",
+   "fieldtype": "Section Break",
+   "label": "Screening Status"
   },
   {
    "default": "0",
-   "fieldname": "minimum_qualification_met",
+   "fieldname": "meets_minimum_requirements",
    "fieldtype": "Check",
-   "label": "Minimum Qualification Met"
+   "label": "Meets Minimum Requirements"
+  },
+  {
+   "default": "0",
+   "fieldname": "shortlisted",
+   "fieldtype": "Check",
+   "label": "Shortlisted"
+  },
+  {
+   "fieldname": "screening_decision",
+   "fieldtype": "Select",
+   "label": "Screening Decision",
+   "options": "Pending, Approved, Rejected"
+  },
+  {
+   "fieldname": "qualifications_verified_section",
+   "fieldtype": "Section Break",
+   "label": "Screening Checklist"
+  },
+  {
+   "default": "0",
+   "fieldname": "check_xeti",
+   "fieldtype": "Check",
+   "label": "Qualifications Verified"
+  },
+  {
+   "default": "0",
+   "fieldname": "required_documents_complete",
+   "fieldtype": "Check",
+   "label": "Required Documents Complete"
+  },
+  {
+   "default": "0",
+   "fieldname": "school_letter_verified",
+   "fieldtype": "Check",
+   "label": "school Letter Verified"
+  },
+  {
+   "default": "0",
+   "fieldname": "national_id_verified",
+   "fieldtype": "Check",
+   "label": "National ID Verified"
+  },
+  {
+   "default": "0",
+   "fieldname": "cv_reviewed",
+   "fieldtype": "Check",
+   "label": "CV Reviewed"
+  },
+  {
+   "fieldname": "column_break_zdpr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_uwul",
+   "fieldtype": "Section Break",
+   "label": "HR Review"
   },
   {
    "fieldname": "screened_by",
@@ -178,26 +578,61 @@
    "options": "User"
   },
   {
+   "fieldname": "screening_remarks",
+   "fieldtype": "Small Text",
+   "label": "Screening Remarks"
+  },
+  {
+   "fieldname": "column_break_scne",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "screening_date",
    "fieldtype": "Date",
    "label": "Screening Date"
   },
   {
-   "fieldname": "screening_comments",
-   "fieldtype": "Small Text",
-   "label": "Screening Comments"
+   "fieldname": "recommendation",
+   "fieldtype": "Select",
+   "label": "Recommendation",
+   "options": "Proceed to Interview\nKeep in Reserve\nReject"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Received\nShortlisted\nInterview Scheduled\nOffered\nAccepted\nRejected\nRegret Sent"
+   "fieldname": "rejection_information_section",
+   "fieldtype": "Section Break",
+   "label": "Rejection Information"
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Rejection Reason"
+  },
+  {
+   "fieldname": "column_break_rdyy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "regret_email_sent",
+   "fieldtype": "Check",
+   "label": "Regret Email Sent"
+  },
+  {
+   "fieldname": "notification_date",
+   "fieldtype": "Datetime",
+   "label": "Notification Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "i_declare_that_the_information_is_accurate",
+   "fieldtype": "Check",
+   "label": "I Declare that the information is accurate"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-26 09:27:13.726098",
+ "modified": "2026-07-01 09:22:23.156814",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Internship Application",

@@ -7,27 +7,35 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "application_information_tab",
   "application_information_section",
-  "application",
+  "offer_number",
+  "applicant",
+  "vacancy",
+  "placement_section",
   "department",
+  "column_break_uawi",
   "supervisor",
-  "section_break_cehl",
-  "offer_date",
+  "section_break_nedo",
   "start_date",
+  "column_break_ygsv",
   "end_date",
-  "section_break_eesc",
+  "documents_tab",
+  "documents_section",
   "offer_letter",
+  "working_conditions_section",
+  "working_hours",
+  "tab_3_tab",
+  "applicant_response_section",
+  "offer_date",
+  "acceptance_deadline",
+  "column_break_jijm",
+  "applicant_response",
+  "response_date",
+  "status_section",
   "status"
  ],
  "fields": [
-  {
-   "fieldname": "application",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Application",
-   "options": "Internship Application",
-   "reqd": 1
-  },
   {
    "fieldname": "application_information_section",
    "fieldtype": "Section Break",
@@ -37,43 +45,72 @@
    "fieldname": "department",
    "fieldtype": "Link",
    "label": "Department",
-   "options": "Department",
-   "reqd": 1
+   "options": "Department"
   },
   {
    "fieldname": "supervisor",
    "fieldtype": "Link",
    "label": "Supervisor",
-   "options": "Supervisor",
-   "reqd": 1
-  },
-  {
-   "fieldname": "section_break_cehl",
-   "fieldtype": "Section Break",
-   "label": "Offer Details"
-  },
-  {
-   "default": "Today",
-   "fieldname": "offer_date",
-   "fieldtype": "Date",
-   "label": "Offer Date",
-   "reqd": 1
+   "options": "User"
   },
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Start Date",
    "reqd": 1
   },
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "End Date",
    "reqd": 1
   },
   {
-   "fieldname": "section_break_eesc",
-   "fieldtype": "Section Break"
+   "fieldname": "offer_number",
+   "fieldtype": "Data",
+   "label": "Offer Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "applicant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Applicant",
+   "options": "Internship Application",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vacancy",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vacancy",
+   "options": "Internship Vacancy",
+   "reqd": 1
+  },
+  {
+   "fieldname": "placement_section",
+   "fieldtype": "Section Break",
+   "label": "Placement"
+  },
+  {
+   "fieldname": "column_break_uawi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_nedo",
+   "fieldtype": "Section Break",
+   "label": "Internship Duration"
+  },
+  {
+   "fieldname": "column_break_ygsv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "documents_tab",
+   "fieldtype": "Tab Break",
+   "label": "Offer Letter"
   },
   {
    "fieldname": "offer_letter",
@@ -81,18 +118,78 @@
    "label": "Offer Letter"
   },
   {
-   "default": "Draft",
+   "fieldname": "documents_section",
+   "fieldtype": "Section Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "working_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Working Conditions"
+  },
+  {
+   "fieldname": "working_hours",
+   "fieldtype": "Select",
+   "label": "Working Hours",
+   "options": "Full Time\nPart Time\nFlexible\nMonday\u2013Friday (8:00 AM \u2013 5:00 PM)\nMonday\u2013Friday (9:00 AM \u2013 5:00 PM)"
+  },
+  {
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "Acceptance"
+  },
+  {
+   "fieldname": "offer_date",
+   "fieldtype": "Date",
+   "label": "Offer Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "acceptance_deadline",
+   "fieldtype": "Date",
+   "label": "Acceptance Deadline"
+  },
+  {
+   "fieldname": "applicant_response_section",
+   "fieldtype": "Section Break",
+   "label": "Applicant Response"
+  },
+  {
+   "fieldname": "column_break_jijm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "applicant_response",
+   "fieldtype": "Select",
+   "label": "Applicant Response",
+   "options": "Pending\nAccepted\nDeclined"
+  },
+  {
+   "fieldname": "response_date",
+   "fieldtype": "Date",
+   "label": "Response Date"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nSent\nAccepted\nDeclined",
-   "reqd": 1
+   "options": "Draft\nSent\nAccepted\nDeclined\nExpired\nCancelled"
+  },
+  {
+   "fieldname": "application_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Application Information"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-25 09:33:03.473855",
+ "modified": "2026-06-30 20:46:53.263951",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Internship Offer",

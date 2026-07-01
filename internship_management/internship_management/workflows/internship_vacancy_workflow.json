@@ -1,0 +1,22 @@
+{
+  "doc_type": "Internship Vacancy",
+  "workflow_name": "Internship Vacancy Workflow",
+  "states": [
+    {"state": "Draft", "action": "Draft"},
+    {"state": "Pending HR Approval", "action": "Pending HR Approval"},
+    {"state": "Approved", "action": "Approved"},
+    {"state": "Rejected", "action": "Rejected"}
+  ],
+  "transitions": [
+    {"trigger": "submit", "source_state": "Draft", "target_state": "Pending HR Approval"},
+    {"trigger": "approve", "source_state": "Pending HR Approval", "target_state": "Approved"},
+    {"trigger": "reject", "source_state": "Pending HR Approval", "target_state": "Rejected"},
+    {"trigger": "revoke", "source_state": "Approved", "target_state": "Rejected"}
+  ],
+  "field_mapping": {
+    "status": "status"
+  },
+  "date_locking": {
+    "lock_after_states": ["Approved"]
+  }
+}

@@ -8,7 +8,6 @@
  "engine": "InnoDB",
  "field_order": [
   "course_name",
-  "institution",
   "duration"
  ],
  "fields": [
@@ -18,21 +17,15 @@
    "label": "Course Name"
   },
   {
-   "fieldname": "institution",
-   "fieldtype": "Link",
-   "label": "Institution",
-   "options": "Institution"
-  },
-  {
    "fieldname": "duration",
-   "fieldtype": "Duration",
+   "fieldtype": "Data",
    "label": "Duration"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-26 09:08:34.016786",
+ "modified": "2026-06-30 09:33:13.937735",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Course",
