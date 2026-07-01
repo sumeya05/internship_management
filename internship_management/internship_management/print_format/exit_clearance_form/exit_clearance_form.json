@@ -1,0 +1,22 @@
+{
+  "name": "Exit Clearance Form",
+  "doctype": "Print Format",
+  "module": "Internship Management",
+  "doc_type": "Intern Exit Clearance",
+  "print_format_for": "DocType",
+  "print_format_type": "Jinja",
+  "custom_format": 1,
+  "disabled": 0,
+  "standard": "No",
+  "default_print_language": "en",
+  "margin_top": 15.0,
+  "margin_bottom": 15.0,
+  "margin_left": 15.0,
+  "margin_right": 15.0,
+  "page_number": "Hide",
+  "pdf_generator": "wkhtmltopdf",
+  "show_section_headings": 0,
+  "line_breaks": 1,
+  "css": "body{font-family:Arial,sans-serif;}h1{color:#b5121b;}h2{color:#b5121b;border-bottom:2px solid #b5121b;padding-bottom:5px;}table{width:100%;border-collapse:collapse;}th,td{padding:8px;border:1px solid #ddd;}",
+  "html": "<h1>Exit Clearance Form</h1><table><tr><td><b>Intern</b></td><td>{{ doc.intern }}</td></tr><tr><td><b>Supervisor</b></td><td>{{ doc.supervisor }}</td></tr><tr><td><b>Status</b></td><td>{{ doc.status }}</td></tr></table><h2>Clearance Checklist</h2><table><tr><th>Item</th><th>Status</th></tr><tr><td>Department Clearance</td><td>{{ 'Yes' if doc.department_clearance else 'No' }}</td></tr><tr><td>HR Clearance</td><td>{{ 'Yes' if doc.hr_clearance else 'No' }}</td></tr><tr><td>ICT Clearance</td><td>{{ 'Yes' if doc.ict_clearance else 'No' }}</td></tr><tr><td>Assets Returned</td><td>{{ 'Yes' if doc.assets_returned else 'No' }}</td></tr><tr><td>Exit Interview Completed</td><td>{{ 'Yes' if doc.exit_interview_completed else 'No' }}</td></tr></table>"
+}

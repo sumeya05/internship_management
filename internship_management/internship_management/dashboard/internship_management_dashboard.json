@@ -1,0 +1,24 @@
+{
+  "doctype": "Dashboard",
+  "name": "Internship Management Dashboard",
+  "module": "Internship Management",
+  "is_standard": 1,
+  "dashboard_name": "Internship Management Dashboard",
+  "charts": [
+    {"chart": "Applications by Department", "width": "Half"},
+    {"chart": "Applications by Status", "width": "Half"},
+    {"chart": "Interviews per Month", "width": "Full"},
+    {"chart": "Active Interns by Department", "width": "Half"},
+    {"chart": "Internship Offers Accepted vs Declined", "width": "Half"}
+  ],
+  "cards": [
+    {"card": "Total Applications"},
+    {"card": "Applications Under Review"},
+    {"card": "Shortlisted Applicants"},
+    {"card": "Interviews Scheduled"},
+    {"card": "Active Interns"},
+    {"card": "Pending Offers"},
+    {"card": "Pending Extension Requests"},
+    {"card": "Interns Completing This Month"}
+  ]
+}

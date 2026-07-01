@@ -1,0 +1,22 @@
+{
+  "name": "Internship Completion Certificate",
+  "doctype": "Print Format",
+  "module": "Internship Management",
+  "doc_type": "Intern Profile",
+  "print_format_for": "DocType",
+  "print_format_type": "Jinja",
+  "custom_format": 1,
+  "disabled": 0,
+  "standard": "No",
+  "default_print_language": "en",
+  "margin_top": 15.0,
+  "margin_bottom": 15.0,
+  "margin_left": 15.0,
+  "margin_right": 15.0,
+  "page_number": "Hide",
+  "pdf_generator": "wkhtmltopdf",
+  "show_section_headings": 0,
+  "line_breaks": 1,
+  "css": "body{font-family:Arial,sans-serif;}h1{color:#b5121b;text-align:center;}h2{color:#b5121b;text-align:center;}table{width:100%;border-collapse:collapse;}td{padding:8px;}",
+  "html": "<h1 style=\"text-align:center;\">Certificate of Completion</h1><p style=\"text-align:center;\">This certifies that</p><h2 style=\"text-align:center;\">{{ doc.intern_name }}</h2><p style=\"text-align:center;\">has successfully completed an internship with the Kenya Red Cross Society.</p><table><tr><td>Department</td><td>{{ doc.department }}</td></tr><tr><td>Supervisor</td><td>{{ doc.supervisor }}</td></tr><tr><td>Internship Period</td><td>{{ frappe.utils.formatdate(doc.start_date) }} - {{ frappe.utils.formatdate(doc.end_date) }}</td></tr></table><br><br>____________________<br>HR Manager"
+}

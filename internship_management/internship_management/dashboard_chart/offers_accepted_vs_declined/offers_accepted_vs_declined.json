@@ -1,0 +1,15 @@
+{
+  "doctype": "Dashboard Chart",
+  "name": "Internship Offers Accepted vs Declined",
+  "module": "Internship Management",
+  "is_standard": 1,
+  "chart_name": "Internship Offers Accepted vs Declined",
+  "chart_type": "Group By",
+  "document_type": "Internship Offer",
+  "group_by_type": "Count",
+  "group_by_based_on": "applicant_response",
+  "type": "Pie",
+  "filters_json": "[[\"Internship Offer\",\"applicant_response\",\"in\",[\"Accepted\",\"Declined\"],false]]",
+  "color": "#d81b60",
+  "is_public": 1
+}

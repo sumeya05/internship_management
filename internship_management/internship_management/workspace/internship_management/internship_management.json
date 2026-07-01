@@ -1,0 +1,136 @@
+{
+ "app": "internship_management",
+ "charts": [
+  {
+   "chart_name": "Applications by Department",
+   "label": "Applications by Department"
+  },
+  {
+   "chart_name": "Applications by Status",
+   "label": "Applications by Status"
+  },
+  {
+   "chart_name": "Interviews per Month",
+   "label": "Interviews per Month"
+  },
+  {
+   "chart_name": "Active Interns by Department",
+   "label": "Active Interns by Department"
+  },
+  {
+   "chart_name": "Internship Offers Accepted vs Declined",
+   "label": "Internship Offers Accepted vs Declined"
+  }
+ ],
+ "content": "[]",
+ "creation": "2026-07-01 14:58:51.799594",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "briefcase",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Internship Management",
+ "link_type": "DocType",
+ "links": [],
+ "modified": "2026-07-01 14:58:51.799594",
+ "modified_by": "Administrator",
+ "module": "Internship Management",
+ "name": "Internship Management",
+ "number_cards": [
+  {
+   "label": "Total Applications",
+   "number_card_name": "Total Applications"
+  },
+  {
+   "label": "Applications Under Review",
+   "number_card_name": "Applications Under Review"
+  },
+  {
+   "label": "Shortlisted Applicants",
+   "number_card_name": "Shortlisted Applicants"
+  },
+  {
+   "label": "Interviews Scheduled",
+   "number_card_name": "Interviews Scheduled"
+  },
+  {
+   "label": "Active Interns",
+   "number_card_name": "Active Interns"
+  },
+  {
+   "label": "Pending Offers",
+   "number_card_name": "Pending Offers"
+  },
+  {
+   "label": "Pending Extension Requests",
+   "number_card_name": "Pending Extension Requests"
+  },
+  {
+   "label": "Interns Completing This Month",
+   "number_card_name": "Interns Completing This Month"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Internship Vacancy",
+   "link_to": "Internship Vacancy",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Internship Application",
+   "link_to": "Internship Application",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Interview Schedule",
+   "link_to": "Interview Schedule",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Internship Offer",
+   "link_to": "Internship Offer",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Intern Profile",
+   "link_to": "Intern Profile",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Extension Request",
+   "link_to": "Extension Request",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Intern Exit Clearance",
+   "link_to": "Intern Exit Clearance",
+   "type": "DocType"
+  }
+ ],
+ "title": "Internship Management",
+ "type": "Workspace"
+}

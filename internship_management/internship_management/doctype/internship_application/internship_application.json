@@ -481,6 +481,7 @@
   {
    "fieldname": "tab_6_tab",
    "fieldtype": "Tab Break",
+   "hidden": 1,
    "label": "Screening"
   },
   {
@@ -632,7 +633,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-01 09:22:23.156814",
+ "modified": "2026-07-01 12:40:52.922934",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Internship Application",

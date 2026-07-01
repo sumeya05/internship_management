@@ -1,0 +1,22 @@
+{
+  "name": "Interview Invitation",
+  "doctype": "Print Format",
+  "module": "Internship Management",
+  "doc_type": "Interview Schedule",
+  "print_format_for": "DocType",
+  "print_format_type": "Jinja",
+  "custom_format": 1,
+  "disabled": 0,
+  "standard": "No",
+  "default_print_language": "en",
+  "margin_top": 15.0,
+  "margin_bottom": 15.0,
+  "margin_left": 15.0,
+  "margin_right": 15.0,
+  "page_number": "Hide",
+  "pdf_generator": "wkhtmltopdf",
+  "show_section_headings": 0,
+  "line_breaks": 1,
+  "css": "body{font-family:Arial,sans-serif;}h1{color:#b5121b;text-align:center;}table{width:100%;border-collapse:collapse;}td{padding:8px;}",
+  "html": "<h1>Interview Invitation</h1><p>Dear {{ frappe.db.get_value('Internship Application', doc.application, 'applicant_name') or doc.application }},</p><p>You are invited for an interview with the Kenya Red Cross Society.</p><table><tr><td><b>Vacancy</b></td><td>{{ doc.vacancy }}</td></tr><tr><td><b>Date</b></td><td>{{ frappe.utils.formatdate(doc.interview_date) }}</td></tr><tr><td><b>Time</b></td><td>{{ doc.interview_time }}</td></tr><tr><td><b>Venue</b></td><td>{{ doc.venue or '' }}</td></tr><tr><td><b>Meeting Link</b></td><td>{{ doc.meeting_link or '' }}</td></tr><tr><td><b>Panel</b></td><td>{% set panels = [] %}{% for row in doc.interview_panel %}{% set _ = panels.append(row.panel_member) %}{% endfor %}{{ panels | join(', ') }}</td></tr></table><p>For questions, please contact HR.</p>"
+}

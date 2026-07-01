@@ -1,0 +1,20 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "width": "Half"
+  }
+ ],
+ "creation": "2026-07-01 11:46:25.190571",
+ "dashboard_name": "Internship Management Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2026-07-01 11:46:25.190571",
+ "modified_by": "Administrator",
+ "module": "Internship Management",
+ "name": "Internship Management Dashboard",
+ "owner": "Administrator"
+}

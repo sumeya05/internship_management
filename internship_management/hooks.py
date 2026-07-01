@@ -5,6 +5,15 @@ app_description = "Internship Information Management System"
 app_email = "sumeyabishar70@gmail.com"
 app_license = "mit"
 
+fixtures = [
+	"Workspace",
+	"Dashboard Chart",
+	"Number Card",
+	"Report",
+	"Print Format",
+	"Web Form",
+]
+
 # Apps
 # ------------------
 
