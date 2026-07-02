@@ -6,12 +6,26 @@ app_email = "sumeyabishar70@gmail.com"
 app_license = "mit"
 
 fixtures = [
-	"Workspace",
-	"Dashboard Chart",
-	"Number Card",
-	"Report",
-	"Print Format",
-	"Web Form",
+	{
+		"dt": "Workspace",
+		"filters": [["module", "=", "Internship Management"]],
+	},
+	{
+		"dt": "Dashboard Chart",
+		"filters": [["module", "=", "Internship Management"]],
+	},
+	{
+		"dt": "Number Card",
+		"filters": [["module", "=", "Internship Management"]],
+	},
+	{
+		"dt": "Report",
+		"filters": [["module", "=", "Internship Management"]],
+	},
+	{
+		"dt": "Print Format",
+		"filters": [["module", "=", "Internship Management"]],
+	},
 ]
 
 # Apps
