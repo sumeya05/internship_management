@@ -8,9 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "department_name",
-  "department_head",
-  "location",
-  "is_active"
+  "department_head"
  ],
  "fields": [
   {
@@ -23,23 +21,12 @@
    "fieldtype": "Link",
    "label": "Department Head",
    "options": "User"
-  },
-  {
-   "fieldname": "location",
-   "fieldtype": "Data",
-   "label": "Location"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_active",
-   "fieldtype": "Check",
-   "label": "Is Active"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-26 09:05:05.862132",
+ "modified": "2026-07-03 09:53:30.565398",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Department",

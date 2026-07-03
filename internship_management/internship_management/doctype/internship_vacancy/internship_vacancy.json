@@ -13,7 +13,6 @@
   "department",
   "column_break_vxba",
   "vacancy_id",
-  "location",
   "amended_from",
   "section_break_xicf",
   "number_of_positions",
@@ -67,13 +66,6 @@
   {
    "fieldname": "column_break_vxba",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "location",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Location",
-   "reqd": 1
   },
   {
    "fieldname": "vacancy_id",
@@ -215,7 +207,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-30 21:05:49.217908",
+ "modified": "2026-07-03 09:52:38.766862",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Internship Vacancy",

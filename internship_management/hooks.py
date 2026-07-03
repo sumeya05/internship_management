@@ -33,6 +33,18 @@ fixtures = [
 
 # required_apps = []
 
+# Web Pages (Public Applicant Portal)
+# Uses template: templates/pages/internship_portal.html
+# Route: /internship-portal
+page_js = {}
+page_routes = {
+	"internship-portal": {
+		"route": "internship-portal",
+		"template": "templates/pages/internship_portal.html",
+	}
+}
+
+
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
@@ -149,13 +161,18 @@ fixtures = [
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
-#
-# has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
+permission_query_conditions = {
+	# Restrict supervisor access by department + assigned intern relationship.
+	"Intern Profile": "internship_management.permissioning.get_permission_query_conditions",
+	"Intern Attendance": "internship_management.permissioning.get_permission_query_conditions",
+	"Intern Progress Log": "internship_management.permissioning.get_permission_query_conditions",
+	"Extension Request": "internship_management.permissioning.get_permission_query_conditions",
+	"Intern Onboarding": "internship_management.permissioning.get_permission_query_conditions",
+	"Intern Exit Clearance": "internship_management.permissioning.get_permission_query_conditions",
+	"Internship Vacancy": "internship_management.permissioning.get_permission_query_conditions",
+}
+
+
 
 # Document Events
 # ---------------

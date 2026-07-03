@@ -1,0 +1,23 @@
+{
+  "doc_type": "Internship Offer",
+  "workflow_name": "Internship Offer Workflow",
+  "states": [
+    { "state": "Draft", "action": "Draft" },
+    { "state": "Sent", "action": "Sent" },
+    { "state": "Accepted", "action": "Accepted" },
+    { "state": "Declined", "action": "Declined" },
+    { "state": "Expired", "action": "Expired" },
+    { "state": "Cancelled", "action": "Cancelled" }
+  ],
+  "transitions": [
+    { "trigger": "send", "source_state": "Draft", "target_state": "Sent" },
+    { "trigger": "accept", "source_state": "Sent", "target_state": "Accepted" },
+    { "trigger": "decline", "source_state": "Sent", "target_state": "Declined" },
+    { "trigger": "expire", "source_state": "Sent", "target_state": "Expired" },
+    { "trigger": "cancel", "source_state": "Draft", "target_state": "Cancelled" },
+    { "trigger": "cancel_sent", "source_state": "Sent", "target_state": "Cancelled" }
+  ],
+  "field_mapping": { "status": "status" },
+  "date_locking": { "lock_after_states": ["Accepted", "Declined", "Expired", "Cancelled"] }
+}
+

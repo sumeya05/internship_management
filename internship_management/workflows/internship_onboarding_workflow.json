@@ -1,0 +1,19 @@
+{
+  "doc_type": "Intern Onboarding",
+  "workflow_name": "Internship Onboarding Workflow",
+  "states": [
+    { "state": "Draft", "action": "Draft" },
+    { "state": "In Progress", "action": "In Progress" },
+    { "state": "Completed", "action": "Completed" },
+    { "state": "Cancelled", "action": "Cancelled" }
+  ],
+  "transitions": [
+    { "trigger": "start", "source_state": "Draft", "target_state": "In Progress" },
+    { "trigger": "complete", "source_state": "In Progress", "target_state": "Completed" },
+    { "trigger": "cancel", "source_state": "Draft", "target_state": "Cancelled" },
+    { "trigger": "cancel_in_progress", "source_state": "In Progress", "target_state": "Cancelled" }
+  ],
+  "field_mapping": { "status": "status" },
+  "date_locking": { "lock_after_states": ["Completed", "Cancelled"] }
+}
+

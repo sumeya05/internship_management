@@ -2,6 +2,7 @@ import frappe
 from frappe.model.document import Document
 
 
-class County(Document):
+class SubCounty(Document):
 	pass
+
 
