@@ -13,20 +13,18 @@ class InternshipVacancy(Document):
 			return
 
 		# When updating an existing doc, block illegal status changes
-
-
 		if frappe.db.exists("Internship Vacancy", self.name):
-			old_status = frappe.db.get_value("Internship Vacancy", self.name, "status")
+			old_status = frappe.db.get_value("Internship Vacancy", self.name, "approval_status")
 		else:
 			old_status = None
 
-		if old_status and old_status != self.status:
+		if old_status and old_status != self.approval_status:
 			allowed = {
-				"Draft": ["Pending HR Approval"],
-				"Pending HR Approval": ["Approved", "Rejected"],
-				"Approved": ["Rejected"],  # per existing workflow revoke
+				"Draft": ["Pending Approval"],
+				"Pending Approval": ["Approved", "Rejected"],
+				"Approved": ["Rejected"],
 				"Rejected": [],
 			}
-			if self.status not in allowed.get(old_status, []):
-				raise frappe.ValidationError(f"Invalid status transition from {old_status} to {self.status}")
+			if self.approval_status not in allowed.get(old_status, []):
+				raise frappe.ValidationError(f"Invalid status transition from {old_status} to {self.approval_status}")
 

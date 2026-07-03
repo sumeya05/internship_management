@@ -170,7 +170,7 @@
    "fieldname": "county",
    "fieldtype": "Link",
    "label": "County",
-   "options": "Country",
+   "options": "County",
    "reqd": 1
   },
   {
@@ -180,8 +180,9 @@
   },
   {
    "fieldname": "sub_county",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Sub County",
+   "options": "Sub County",
    "reqd": 1
   },
   {

@@ -8,7 +8,7 @@ from frappe.model.document import Document
 class InternshipApplication(Document):
 	def validate(self):
 		# Required vacancy link
-		if not getattr(self, "vacancy", None):
+		if not getattr(self, "vacancy_applied_for", None):
 			from frappe import ValidationError
 			raise ValidationError("Vacancy is required")
 
@@ -45,7 +45,7 @@ class InternshipApplication(Document):
 	def _validate_vacancy_is_approved(self) -> None:
 		import frappe
 		vacancy_status = frappe.db.get_value(
-			"Internship Vacancy", self.vacancy, "status"
+			"Internship Vacancy", self.vacancy_applied_for, "approval_status"
 		)
 		if not vacancy_status:
 			from frappe import ValidationError
@@ -64,7 +64,7 @@ class InternshipApplication(Document):
 		dupes = frappe.get_all(
 			"Internship Application",
 			filters={
-				"vacancy": self.vacancy,
+				"vacancy_applied_for": self.vacancy_applied_for,
 				"email": self.email,
 				"name": ["!=", self.name],
 			},
