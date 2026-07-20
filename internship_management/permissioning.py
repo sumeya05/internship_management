@@ -219,6 +219,58 @@ def _apply_role_permission_matrix() -> None:
 	)
 
 
+def has_general_permission(
+	doc: frappe.Document | None = None,
+	user: str | None = None,
+	doctype: str | None = None,
+	perm_type: str = "read",
+) -> bool:
+	"""General has_permission hook for all doctypes.
+
+	Rules:
+	- Administrator / System Administrator: full access.
+	- HR Officer / Management/Approver: full access.
+	- Supervisor: scoped to their department.
+	- Everyone else: denied.
+	"""
+	from frappe import _
+
+	user = user or frappe.session.user
+
+	if user == "Administrator":
+		return True
+
+	roles = frappe.get_roles(user)
+
+	if "System Administrator" in roles:
+		return True
+
+	if any(r in roles for r in ("HR Officer", "Management/Approver")):
+		return True
+
+	if "Supervisor" in roles:
+		dept = get_supervisor_department_for_user(user)
+		if not dept:
+			return False
+
+		if doc:
+			# For docs with a direct `department` field.
+			doc_dept = getattr(doc, "department", None)
+			if doc_dept and doc_dept == dept:
+				return True
+
+			# For docs linked via Intern Profile.
+			intern = getattr(doc, "intern", None)
+			if intern:
+				ip_dept = frappe.db.get_value("Intern Profile", intern, "department")
+				if ip_dept == dept:
+					return True
+
+		return False
+
+	return False
+
+
 def execute() -> None:
 	for r in ROLE_NAMES:
 		_ensure_role(r)
