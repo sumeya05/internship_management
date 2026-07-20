@@ -11,20 +11,24 @@
   "application_information_section",
   "offer_number",
   "applicant",
+  "candidate_name",
   "vacancy",
   "placement_section",
   "department",
   "column_break_uawi",
   "supervisor",
+  "location",
   "section_break_nedo",
   "start_date",
   "column_break_ygsv",
   "end_date",
+  "internship_duration",
   "documents_tab",
   "documents_section",
   "offer_letter",
   "working_conditions_section",
   "working_hours",
+  "conditions_before_reporting",
   "tab_3_tab",
   "applicant_response_section",
   "offer_date",
@@ -52,6 +56,11 @@
    "fieldtype": "Link",
    "label": "Supervisor",
    "options": "User"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
   },
   {
    "fieldname": "start_date",
@@ -82,6 +91,12 @@
    "reqd": 1
   },
   {
+   "fieldname": "candidate_name",
+   "fieldtype": "Data",
+   "label": "Candidate Name",
+   "read_only": 1
+  },
+  {
    "fieldname": "vacancy",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -108,6 +123,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "fieldname": "internship_duration",
+   "fieldtype": "Data",
+   "label": "Internship Duration"
+  },
+  {
    "fieldname": "documents_tab",
    "fieldtype": "Tab Break",
    "label": "Offer Letter"
@@ -131,7 +151,12 @@
    "fieldname": "working_hours",
    "fieldtype": "Select",
    "label": "Working Hours",
-   "options": "Full Time\nPart Time\nFlexible\nMonday\u2013Friday (8:00 AM \u2013 5:00 PM)\nMonday\u2013Friday (9:00 AM \u2013 5:00 PM)"
+   "options": "Full Time\nPart Time\nFlexible\nMonday–Friday (8:00 AM – 5:00 PM)\nMonday–Friday (9:00 AM – 5:00 PM)"
+  },
+  {
+   "fieldname": "conditions_before_reporting",
+   "fieldtype": "Text",
+   "label": "Conditions / Requirements Before Reporting"
   },
   {
    "fieldname": "tab_3_tab",
@@ -178,7 +203,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nSent\nAccepted\nDeclined\nExpired\nCancelled"
+   "options": "Draft\nSent\nAccepted\nDeclined\nExpired\nWithdrawn"
   },
   {
    "fieldname": "application_information_tab",
@@ -189,7 +214,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-30 20:46:53.263951",
+ "modified": "2026-07-14 00:00:00",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Internship Offer",
@@ -215,3 +240,4 @@
  "sort_order": "DESC",
  "states": []
 }
+

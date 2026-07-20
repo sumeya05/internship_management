@@ -8,9 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "institution_name",
-  "institution_type",
-  "country",
-  "active"
+  "institution_type"
  ],
  "fields": [
   {
@@ -23,23 +21,12 @@
    "fieldtype": "Select",
    "label": "Institution Type",
    "options": "University\nCollege\nOthers"
-  },
-  {
-   "fieldname": "country",
-   "fieldtype": "Data",
-   "label": "County"
-  },
-  {
-   "default": "0",
-   "fieldname": "active",
-   "fieldtype": "Check",
-   "label": "Active"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-30 09:25:49.206365",
+ "modified": "2026-07-05 21:40:04.436880",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Institution",

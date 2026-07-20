@@ -7,14 +7,51 @@ from frappe.model.document import Document
 
 class InternshipApplication(Document):
 	def validate(self):
-		# Required vacancy link
+		# Required vacancy/ad link
 		if not getattr(self, "vacancy_applied_for", None):
 			from frappe import ValidationError
 			raise ValidationError("Vacancy is required")
 
+		# Public portal stores Opportunity Advertisement id in `vacancy_applied_for`.
+		# Enforce deadline/status rules again at the doctype level to prevent bypasses.
+		self._validate_advertisement_is_open_for_application()
+
 		self._validate_vacancy_is_approved()
 		self._validate_no_duplicate_application()
 		self._validate_status_transition()
+
+	def _validate_advertisement_is_open_for_application(self) -> None:
+		"""Block submissions if the linked Opportunity Advertisement is not open."""
+		import frappe
+		from frappe import ValidationError
+
+		advertisement_id = getattr(self, "vacancy_applied_for", None)
+		if not advertisement_id:
+			return
+
+		try:
+			ad = frappe.get_doc("Opportunity Advertisement", advertisement_id)
+		except Exception:
+			# If this doctype is ever used with a true Vacancy id, fall back to vacancy validator.
+			return
+
+		ad_status = getattr(ad, "status", None)
+		if ad_status in ("Draft", "Closed", None, ""):
+			raise ValidationError("Opportunity advertisement is not open")
+
+		deadline = getattr(ad, "application_deadline", None)
+		if not deadline:
+			return
+
+		from frappe.utils import get_datetime, nowdate
+		if isinstance(deadline, str):
+			dl = get_datetime(deadline).date()
+		else:
+			dl = deadline.date() if hasattr(deadline, "date") else deadline
+
+		if dl < nowdate():
+			raise ValidationError("Application deadline has passed")
+
 
 	def _validate_status_transition(self) -> None:
 		import frappe

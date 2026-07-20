@@ -3,6 +3,7 @@
 
 // frappe.ui.form.on("Internship Vacancy", {
 // 	refresh(frm) {
-
+// 		// UI prompts for HR actions are intentionally minimal in this project.
+// 		// Server-side validation ensures reasons/clarifications are provided.
 // 	},
 // });

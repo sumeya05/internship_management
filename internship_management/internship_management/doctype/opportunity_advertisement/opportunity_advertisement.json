@@ -9,12 +9,17 @@
  "field_order": [
   "vacancy",
   "department",
+  "location",
   "number_of_vacancies",
+  "qualifications_required",
+  "skills_required",
+  "responsibilities",
+  "duration",
+  "application_deadline",
   "required_documents",
+  "special_instructions",
   "status",
   "column_break_katq",
-  "qualifications_required",
-  "application_deadline",
   "publish_date"
  ],
  "fields": [
@@ -33,8 +38,14 @@
    "options": "Department"
   },
   {
-   "fieldname": "column_break_katq",
-   "fieldtype": "Column Break"
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "number_of_vacancies",
+   "fieldtype": "Int",
+   "label": "Number of Vacancies"
   },
   {
    "fieldname": "qualifications_required",
@@ -42,9 +53,19 @@
    "label": "Qualifications Required"
   },
   {
-   "fieldname": "number_of_vacancies",
-   "fieldtype": "Int",
-   "label": "Number of Vacancies"
+   "fieldname": "skills_required",
+   "fieldtype": "Data",
+   "label": "Skills Required"
+  },
+  {
+   "fieldname": "responsibilities",
+   "fieldtype": "Text",
+   "label": "Internship Responsibilities"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Internship Duration"
   },
   {
    "fieldname": "application_deadline",
@@ -55,6 +76,15 @@
    "fieldname": "required_documents",
    "fieldtype": "Data",
    "label": "Required Documents"
+  },
+  {
+   "fieldname": "special_instructions",
+   "fieldtype": "Text",
+   "label": "Special Instructions for Applicants"
+  },
+  {
+   "fieldname": "column_break_katq",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "publish_date",
@@ -136,3 +166,4 @@
  "sort_order": "DESC",
  "states": []
 }
+

@@ -14,3 +14,24 @@ def smoke_get_vacancies():
 	assert 'vacancies' in resp
 	return resp
 
+
+def smoke_get_my_application_status():
+	"""Smoke test for status endpoint.
+	Requires a previously submitted Internship Application in DB.
+	"""
+	# This is intentionally manual.
+	pass
+
+
+def smoke_screening_decision_endpoints():
+	"""Manual smoke test for screening decision endpoints."""
+	# Intended manual calls:
+	# - frappe.call('internship_management.api.get_screening_queue', {filters: {}})
+	# - frappe.call('internship_management.api.get_application_for_screening', {'application_name': '...'} )
+	# - frappe.call('internship_management.api.screen_application', {'application_name': '...', 'decision': 'Shortlisted', 'minimum_requirements_met': True, 'remarks': '...'})
+	pass
+
+
+
+
+

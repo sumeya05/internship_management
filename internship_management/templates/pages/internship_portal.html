@@ -1,8 +1,17 @@
 {% extends "templates/web.html" %}
 
 {% block page_content %}
+<link rel="stylesheet" href="/assets/internship_management/krcs-brand.css" />
+<style>
+  /* Fallback if KRCS image missing */
+  .krcs-logo{min-height:48px;}
+</style>
 <div class="container">
-	<h2 class="mb-3">Available Internships</h2>
+	<div class="d-flex align-items-center gap-3 mb-3">
+		<img class="krcs-logo" src="/assets/internship_management/krce-logo.png" alt="Kenya Red Cross" />
+		<h2 class="mb-0">Available Internships</h2>
+	</div>
+
 
 	<div id="vacancies" class="row"></div>
 
@@ -10,9 +19,29 @@
 
 	<h3 class="mb-3">Apply</h3>
 	<form id="applyForm" enctype="multipart/form-data">
-		<input type="hidden" name="vacancy_applied_for" id="vacancy_applied_for" />
+		<!-- Hidden: Opportunity Advertisement id (backend expects `vacancy_applied_for`) -->
+		<input type="hidden" name="vacancy_applied_for" id="advertisement_applied_for" />
+
+
 
 		<div class="row g-3">
+			<!-- Internship period (required by backend mandatory fields) -->
+			<div class="col-md-6">
+				<label class="form-label">Internship Start Date</label>
+				<input class="form-control" name="internship_start_date" type="date" required />
+			</div>
+			<div class="col-md-6">
+				<label class="form-label">Internship End Date</label>
+				<input class="form-control" name="internship_end_date" type="date" required />
+			</div>
+
+			<!-- Preferred department (required by backend mandatory fields) -->
+			<div class="col-md-6">
+				<label class="form-label">Preferred Department</label>
+				<input class="form-control" name="preferred_department" required />
+				<small class="text-muted">Enter the department you prefer</small>
+			</div>
+
 			<div class="col-md-6">
 				<label class="form-label">First Name</label>
 				<input class="form-control" name="first_name" required />
@@ -95,8 +124,8 @@
 				<input class="form-control" type="file" name="nid_file" />
 			</div>
 			<div class="col-md-6">
-				<label class="form-label">Attachment: School Letter</label>
-				<input class="form-control" type="file" name="school_letter_file" />
+				<label class="form-label">Attachment: School Letter (required)</label>
+				<input class="form-control" type="file" name="school_letter_file" required />
 			</div>
 			<div class="col-md-6">
 				<label class="form-label">Attachment: Certificates</label>
@@ -105,9 +134,29 @@
 		</div>
 
 		<button class="btn btn-primary mt-3" type="submit">Submit Application</button>
+
 		<div id="applyResult" class="mt-3"></div>
 	</form>
+
+	<hr class="my-4" />
+
+	<h3 class="mb-3">Track Application Status</h3>
+	<div class="row g-3 align-items-end">
+		<div class="col-md-5">
+			<label class="form-label">Application Reference Number</label>
+			<input class="form-control" id="track_reference" placeholder="e.g. APP-2026-1234" />
+		</div>
+		<div class="col-md-5">
+			<label class="form-label">Or Email</label>
+			<input class="form-control" id="track_email" type="email" placeholder="your@email.com" />
+		</div>
+		<div class="col-md-2">
+			<button class="btn btn-outline-primary w-100" type="button" id="trackBtn">Track</button>
+		</div>
+	</div>
+	<div id="trackResult" class="mt-3"></div>
 </div>
+
 
 <script>
 	async function callApi(method, args) {
@@ -128,18 +177,28 @@
 		(data.vacancies || []).forEach(v => {
 			const col = document.createElement('div');
 			col.className = 'col-md-6 mb-3';
-			col.innerHTML = `
-				<div class="card h-100">
-					<div class="card-body">
-						<h5 class="card-title">${v.vacancy_title}</h5>
-						<p class="card-text mb-2">Department: ${v.department || ''}</p>
-						<p class="card-text mb-2">Location: ${v.location || ''}</p>
-						<p class="card-text mb-3">Duration: ${v.duration || ''}</p>
-						<button class="btn btn-outline-primary" type="button" data-id="${v.name}">Apply</button>
-					</div>
-				</div>`;
+				col.innerHTML = `
+					<div class="card h-100">
+						<div class="card-body">
+							<h5 class="card-title">${v.vacancy_title}</h5>
+							<p class="card-text mb-2">Department: ${v.department || ''}</p>
+							<p class="card-text mb-2">Location: ${v.location || ''}</p>
+							<p class="card-text mb-2">Vacancies: ${v.number_of_vacancies || ''}</p>
+							<p class="card-text mb-2">Duration: ${v.duration || ''}</p>
+							<p class="card-text mb-2">Qualifications: ${v.qualifications_required || ''}</p>
+							<p class="card-text mb-2">Skills: ${v.skills_required || ''}</p>
+							<p class="card-text mb-2">Deadline: ${v.application_deadline || ''}</p>
+							<p class="card-text mb-2">Responsibilities: ${v.responsibilities || ''}</p>
+							<p class="card-text mb-2">Required Documents: ${v.required_documents || ''}</p>
+							<p class="card-text mb-2">Special Instructions: ${v.special_instructions || ''}</p>
+							<button class="btn btn-outline-primary" type="button" data-id="${v.name}">Apply</button>
+
+						</div>
+					</div>`;
+
 			col.querySelector('button').addEventListener('click', (e) => {
-					document.getElementById('vacancy_applied_for').value = v.name;
+					document.getElementById('advertisement_applied_for').value = v.name;
+
 					e.target.closest('.card').querySelector('button').disabled = true;
 					alert('Selected vacancy for application');
 				});
@@ -149,7 +208,8 @@
 
 	document.getElementById('applyForm').addEventListener('submit', async (e) => {
 		e.preventDefault();
-		const vacancy = document.getElementById('vacancy_applied_for').value;
+		const vacancy = document.getElementById('advertisement_applied_for').value;
+
 		if (!vacancy) {
 			document.getElementById('applyResult').innerText = 'Select a vacancy first.';
 			return;
@@ -176,10 +236,32 @@
 		}
 	});
 
+	async function trackStatus() {
+		const reference_number = (document.getElementById('track_reference')?.value || '').trim();
+		const email = (document.getElementById('track_email')?.value || '').trim();
+		const args = { reference_number, email };
+		try {
+			const res = await callApi('internship_management.api.get_my_application_status', args);
+			const el = document.getElementById('trackResult');
+			if (!res.found) {
+				el.innerText = res.message || 'No application found';
+				return;
+			}
+			el.innerText = `Status: ${res.status} (Reference: ${res.reference_number})`;
+		} catch (err) {
+			document.getElementById('trackResult').innerText = (err && err.message) ? err.message : 'Track failed';
+		}
+	}
+
+	document.getElementById('trackBtn').addEventListener('click', (e) => {
+		trackStatus();
+	});
+
 	// boot
 	frappe.ready(() => {
 		loadVacancies();
 	});
 </script>
 {% endblock %}
+
 

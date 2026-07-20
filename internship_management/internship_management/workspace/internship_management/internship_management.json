@@ -1,8 +1,8 @@
 {
  "app": "internship_management",
  "charts": [],
- "content": "[{\"id\":\"c8d6QFP6Wi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Internship Management workspace</span>\",\"col\":12}},{\"id\":\"vacancies\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Internship Vacancy\",\"col\":3}},{\"id\":\"applications\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Internship Application\",\"col\":3}},{\"id\":\"offers\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Internship Offer\",\"col\":3}},{\"id\":\"onboarding\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Intern Onboarding\",\"col\":3}},{\"id\":\"clearance\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Intern Exit Clearance\",\"col\":3}}]",
- "creation": "2026-07-02 19:01:16.333672",
+ "content": "[{\"id\":\"jVV4VB-rf1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Internship Management workspace</span>\",\"col\":12}},{\"id\":\"9Q58ecIS7S\",\"type\":\"paragraph\",\"data\":{\"text\":\"Click on \\n\\t\\t\\t\\n\\t\\t\\t\\n\\t\\t to edit\",\"col\":12}}]",
+ "creation": "2026-07-13 18:19:29.598609",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -14,97 +14,8 @@
  "is_hidden": 0,
  "label": "Internship Management",
  "link_type": "DocType",
- "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Recruitment",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Internship Vacancy",
-   "link_count": 0,
-   "link_to": "Internship Vacancy",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Opportunity Advertisement",
-   "link_count": 0,
-   "link_to": "Opportunity Advertisement",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Internship Application",
-   "link_count": 0,
-   "link_to": "Internship Application",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Internship Offer",
-   "link_count": 0,
-   "link_to": "Internship Offer",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Onboarding and Exit",
-   "link_count": 3,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Intern Onboarding",
-   "link_count": 0,
-   "link_to": "Intern Onboarding",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Intern Profile",
-   "link_count": 0,
-   "link_to": "Intern Profile",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Intern Exit Clearance",
-   "link_count": 0,
-   "link_to": "Intern Exit Clearance",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  }
- ],
- "modified": "2026-07-02 16:37:48.442439",
+ "links": [],
+ "modified": "2026-07-13 18:59:17.309337",
  "modified_by": "Administrator",
  "module": "Internship Management",
  "name": "Internship Management",

@@ -1,0 +1,47 @@
+:root{
+  --krcs-red:#c8102e;
+  --krcs-red-dark:#a50f25;
+  --krcs-ink:#111827;
+  --krcs-muted:#6b7280;
+}
+
+/* KRCS branding overrides for the public portal templates */
+body{ color:var(--krcs-ink); }
+
+/* Buttons */
+.btn-krcs-primary,
+.btn.btn-primary{ 
+  background-color:var(--krcs-red) !important;
+  border-color:var(--krcs-red) !important;
+  color:#fff !important;
+}
+.btn.btn-primary:hover,
+.btn-krcs-primary:hover{ 
+  background-color:var(--krcs-red-dark) !important;
+  border-color:var(--krcs-red-dark) !important;
+}
+
+.btn-krcs-outline,
+.btn.btn-outline-primary{ 
+  border-color:var(--krcs-red) !important;
+  color:var(--krcs-red) !important;
+}
+.btn-krcs-outline:hover,
+.btn.btn-outline-primary:hover{ 
+  background-color:var(--krcs-red) !important;
+  border-color:var(--krcs-red) !important;
+  color:#fff !important;
+}
+
+/* Cards/headers */
+.card{ border-color: rgba(200,16,46,.25) !important; }
+.h2,
+h1,h2,h3,h4,h5,h6{ font-weight:700; }
+
+/* Logo wrapper */
+.krcs-logo{
+  height:48px;
+  width:auto;
+  display:block;
+}
+

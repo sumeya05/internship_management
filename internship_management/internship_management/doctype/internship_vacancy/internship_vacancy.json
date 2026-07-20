@@ -11,14 +11,17 @@
   "basic_information_section",
   "vacancy_title",
   "department",
+  "location",
   "column_break_vxba",
   "vacancy_id",
   "amended_from",
+  "department_remarks",
   "section_break_xicf",
   "number_of_positions",
   "internship_category",
   "column_break_hmiq",
   "duration",
+  "requested_start_date",
   "start_date",
   "end_date",
   "tab_2_tab",
@@ -37,9 +40,9 @@
   "section_break_egfc",
   "application_deadline"
  ],
- "fields": [
-  {
-   "fieldname": "vacancy_title",
+	"fields": [
+		{
+			"fieldname": "vacancy_title",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Vacancy Title",
@@ -61,6 +64,13 @@
    "in_list_view": 1,
    "label": "Department",
    "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location",
    "reqd": 1
   },
   {
@@ -112,10 +122,21 @@
    "reqd": 1
   },
   {
+   "fieldname": "requested_start_date",
+   "fieldtype": "Date",
+   "label": "Requested Start Date",
+   "reqd": 0
+  },
+  {
    "fieldname": "end_date",
    "fieldtype": "Date",
    "label": "End Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "department_remarks",
+   "fieldtype": "Small Text",
+   "label": "Department Remarks"
   },
   {
    "fieldname": "vacancy_information_tab",
@@ -177,7 +198,19 @@
    "fieldname": "approval_status",
    "fieldtype": "Select",
    "label": "Approval Status",
-   "options": "Draft\nPending Approval\nApproved\nPublished\nClosed\nCancelled",
+   "options": "Draft\nSubmitted\nReturned for Clarification\nApproved\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hr_clarification_request",
+   "fieldtype": "Small Text",
+   "label": "HR Clarification Request",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hr_rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "HR Rejection Reason",
    "read_only": 1
   },
   {
@@ -268,6 +301,18 @@
    "report": 1,
    "role": "Supervisor",
    "share": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Department Representative",
+   "share": 1,
+   "submit": 1,
+   "write": 1
   }
  ],
  "row_format": "Dynamic",

@@ -2,24 +2,62 @@
   "doc_type": "Internship Vacancy",
   "workflow_name": "Internship Vacancy Workflow",
   "states": [
-    { "state": "Draft", "action": "Draft" },
-    { "state": "Pending Approval", "action": "Pending Approval" },
-    { "state": "Approved", "action": "Approved" },
-    { "state": "Published", "action": "Published" },
-    { "state": "Closed", "action": "Closed" },
-    { "state": "Cancelled", "action": "Cancelled" }
+    {
+      "state": "Draft",
+      "action": "Draft"
+    },
+    {
+      "state": "Submitted",
+      "action": "Submitted"
+    },
+    {
+      "state": "Returned for Clarification",
+      "action": "Returned for Clarification"
+    },
+    {
+      "state": "Approved",
+      "action": "Approved"
+    },
+    {
+      "state": "Rejected",
+      "action": "Rejected"
+    }
   ],
   "transitions": [
-    { "trigger": "submit", "source_state": "Draft", "target_state": "Pending Approval" },
-    { "trigger": "approve", "source_state": "Pending Approval", "target_state": "Approved" },
-    { "trigger": "reject", "source_state": "Draft", "target_state": "Cancelled" },
-    { "trigger": "reject_pending", "source_state": "Pending Approval", "target_state": "Cancelled" },
-    { "trigger": "publish", "source_state": "Approved", "target_state": "Published" },
-    { "trigger": "close", "source_state": "Published", "target_state": "Closed" },
-    { "trigger": "cancel", "source_state": "Draft", "target_state": "Cancelled" },
-    { "trigger": "cancel_pending", "source_state": "Pending Approval", "target_state": "Cancelled" }
+    {
+      "trigger": "submit",
+      "source_state": "Draft",
+      "target_state": "Submitted"
+    },
+    {
+      "trigger": "request_clarification",
+      "source_state": "Submitted",
+      "target_state": "Returned for Clarification"
+    },
+    {
+      "trigger": "approve",
+      "source_state": "Submitted",
+      "target_state": "Approved"
+    },
+    {
+      "trigger": "reject",
+      "source_state": "Submitted",
+      "target_state": "Rejected"
+    },
+    {
+      "trigger": "resubmit",
+      "source_state": "Returned for Clarification",
+      "target_state": "Submitted"
+    }
   ],
-  "field_mapping": { "approval_status": "approval_status" },
-  "date_locking": { "lock_after_states": ["Approved", "Cancelled"] }
+  "field_mapping": {
+    "approval_status": "approval_status"
+  },
+  "date_locking": {
+    "lock_after_states": [
+      "Approved",
+      "Rejected"
+    ]
+  }
 }
 

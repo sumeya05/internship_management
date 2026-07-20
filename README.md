@@ -2,6 +2,12 @@
 
 Internship Information Management System
 
+For full setup + portal/API usage, see **ONBOARDING_FULL.md**.
+
+Short version: see **ONBOARDING.md**.
+
+
+
 ### Installation
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:

@@ -19,6 +19,51 @@ def _normalize_course(value: str | None) -> str | None:
 	return str(value).strip().lower()
 
 
+def validate_vacancy_is_open_for_application(*, vacancy: object) -> None:
+	"""Reject submissions if the vacancy is not open for applications."""
+	# application_deadline is stored on Internship Vacancy.
+	deadline = getattr(vacancy, "application_deadline", None)
+	if not deadline:
+		# If no deadline set, allow submission.
+		return
+
+	from frappe.utils import get_datetime
+	# deadline may come as date string; normalize to date for comparison
+	dl = get_datetime(deadline).date() if isinstance(deadline, str) else getattr(deadline, "date", lambda: deadline)()
+
+	# Compare against server today.
+	from frappe.utils import nowdate
+	if dl < nowdate():
+		raise ValidationError("Application deadline has passed")
+
+
+def validate_advertisement_is_open_for_application(*, advertisement: object) -> None:
+	"""Reject submissions if the opportunity advertisement is not open for applications."""
+	# Status-based rules.
+	status = getattr(advertisement, "status", None)
+	if status in ("Draft", "Closed", None, ""):
+		raise ValidationError("Opportunity advertisement is not open")
+
+	# application_deadline-based rules.
+	deadline = getattr(advertisement, "application_deadline", None)
+	if not deadline:
+		# If no deadline set, allow submission.
+		return
+
+	from frappe.utils import get_datetime, nowdate
+	# deadline may come as date string or datetime; normalize to date for comparison
+	if isinstance(deadline, str):
+		dl = get_datetime(deadline).date()
+	else:
+		dl = deadline.date() if hasattr(deadline, "date") else deadline
+	if dl < nowdate():
+		raise ValidationError("Application deadline has passed")
+
+
+
+
+
+
 def validate_application_against_vacancy(*, vacancy_id: str, applicant_payload: dict) -> None:
 	"""Server-side screening rules for public portal submissions.
 
@@ -65,9 +110,17 @@ def validate_application_against_vacancy(*, vacancy_id: str, applicant_payload: 
 	# - CV file provided
 	# - ID/NID file optional (only required if provided by vacancy's schema later)
 	# We'll require `cv_file` present in payload.
+	# Public portal submits raw file objects through FormData, which won't
+	# necessarily arrive as a string. So accept either:
+	# - a file ID / filename (string)
+	# - a truthy non-string value (e.g., uploaded file placeholder)
 	cv = applicant_payload.get("cv_file") or applicant_payload.get("cv")
 	if not cv:
 		raise ValidationError("CV upload is required")
+	if isinstance(cv, str):
+		if not cv.strip():
+			raise ValidationError("CV upload is required")
+
 
 	# If frontend provided file IDs under `file_ids` we could check them, but this app currently
 	# accepts simplified payload.
