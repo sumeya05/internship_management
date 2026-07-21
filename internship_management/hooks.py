@@ -143,9 +143,9 @@ has_permission = {
 # and required public assets.
 #
 
-before_request = [
-    "internship_management.public_page_helper.fix_public_pages_for_app_prefix"
-]
+#before_request = [
+  #  "internship_management.public_page_helper.before_request"
+#]
 
 
 # ---------------------------------------------------------

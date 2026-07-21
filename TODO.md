@@ -1,47 +1,29 @@
-# Fix: "Not Permitted" Error for Public Pages
+# Fix 403 Errors on Public Asset Routes (`/website_script.js`, `/login`, etc.)
 
-## Steps
+## Problem
+The `before_request` hook in `public_page_helper.py` was returning early for `.js`/`.css` paths (in `before_request()`) and listing public asset filenames in `IGNORE_ROUTES` (in `fix_public_pages_for_app_prefix()`), preventing the `public_page` flag from being set for Guest users. This caused Frappe to return **403 Forbidden** for public assets like `/website_script.js`.
 
-- [x] Step 1: Analyze the issue - Understand all the problems
-- [x] Step 2: Read all relevant source files for complete understanding
-- [x] Step 3: Consolidate `public_page_helper.py` with direct implementation (remove fragile delegation)
-- [x] Step 4: Update `hooks_public_pages_fix.py` to be backward-compatible re-export wrapper
-- [x] Step 5: Fix `hooks.py` - permission hook function references were pointing to non-existent functions
-- [x] Step 6: Add `has_general_permission()` function to `permissioning.py`
-- [x] Step 7: Clear Frappe cache and test
+## Root Cause
+1. `before_request()` returned early for paths ending in `.js` or `.css` **before** calling `fix_public_pages_for_app_prefix()`.
+2. Inside `fix_public_pages_for_app_prefix()`, the `IGNORE_ROUTES` set included public asset filenames (`website_script.js`, `website_style.css`, etc.), so the function returned early **before** the `PUBLIC_ASSETS` check could set `frappe.local.flags.public_page = True`.
 
-## Root Causes Found
+## Fix Applied
 
-### Cause 1: Fragile delegation chain
-`hooks.py` → `public_page_helper.py` (delegates via try/except to) → `hooks_public_pages_fix.py`
-If the import failed silently, `public_page` flag was never set → **"Not Permitted"**
+### Changes to `public_page_helper.py`
 
-### Cause 2: Empty/root path not handled
-When visiting `/`, path was empty string → `fix_public_pages_for_app_prefix()` returned early
-without setting `public_page = True`
+1. **`before_request()`** — Removed `path.endswith(".js")`, `path.endswith(".css")`, and `path in ("/sw.js", "/website_script.js")` from the early-return guard clause. These paths now flow through to `fix_public_pages_for_app_prefix()`.
 
-### Cause 3: Wrong function names in `hooks.py` ⬅️ **MAIN ISSUE**
-`permission_query_conditions` referenced `get_permission_query_conditions` (doesn't exist)
-`has_permission` referenced `has_permission` (doesn't exist in permissioning.py)
+2. **`IGNORE_ROUTES`** — Removed public asset filenames (`website_script.js`, `website_style.css`, `website.bundle.css`, `sw.js`, `favicon.ico`, `robots.txt`). These are only in `PUBLIC_ASSETS`, which correctly sets `public_page = True`.
 
-Actual functions in `permissioning.py`:
-- `get_conditions_intern_profile`, `get_conditions_intern_attendance`, etc.
-- No `has_permission` function existed at all
+3. **Updated docstrings** to reflect the new behavior.
 
-## Fix Summary
+### Result
+- `/website_script.js` → flows to `fix_public_pages_for_app_prefix()` → matches `PUBLIC_ASSETS` → sets `public_page = True` → Frappe serves it to Guest users
+- `/login?redirect-to=/login` → The login page can now load `/website_script.js` and function properly
 
-### `public_page_helper.py` - Consolidated implementation
-- Moved full implementation here (eliminates fragile import delegation)
-- Added root URL `/` handling (sets `public_page = True` for empty path)
-- Clean error logging
-
-### `hooks_public_pages_fix.py` - Backward-compatible wrapper
-- Now delegates TO `public_page_helper` instead of the other way around
-
-### `hooks.py` - Fixed permission hook references
-- `permission_query_conditions`: now points to correct function names
-- `has_permission`: now points to `has_general_permission`
-
-### `permissioning.py` - Added missing function
-- Added `has_general_permission()` function with proper role-based logic
+## Next Steps
+- [ ] `bench --site internship.localhost clear-cache`
+- [ ] `bench restart`
+- [ ] Test: visit `http://internship.localhost:8000/login` — should load without 403
+- [ ] Test: check browser devtools for `/website_script.js` — should return 200
 
